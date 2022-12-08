@@ -15,8 +15,8 @@ namespace LMSAutoTesting.StepDefinitions
         {
             throw new PendingStepException();
         }
-        [Given("age is 30 (.*)")]
-        public void GivenAgeIs(int number)
+        [Given("Birth data is 07.12.2001 (.*)")]
+        public void GivenBirthDataIs(int number)
         {
             throw new PendingStepException();
         }
