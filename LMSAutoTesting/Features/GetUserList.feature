@@ -1,7 +1,5 @@
 ﻿Feature: GetUserList
 
-A short summary of the feature
-
 @tag1
 Scenario: Get user list as manager
 	Given Authorize as manager
