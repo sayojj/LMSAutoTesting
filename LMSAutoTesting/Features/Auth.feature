@@ -1,4 +1,4 @@
-﻿Feature: Auth
+﻿ Feature:Auth
 
 Scenario:Auth 
 Given Open Auth web page
