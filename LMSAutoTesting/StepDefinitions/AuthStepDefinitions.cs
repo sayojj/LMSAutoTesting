@@ -16,6 +16,15 @@ namespace LMSAutoTesting.StepDefinitions
             _driver.Navigate().GoToUrl(Urls.AuthPage);
         }
 
+        [Given(@"Ignore security warning")]
+        public void GivenIgnoreSecurityWarning()
+        {
+            string xPathMore = @"/html/body/div/div[2]/button[3]";
+            _driver.FindElement(By.XPath(xPathMore)).Click();
+            string xPathGoTo = @"/html/body/div/div[3]/p[2]/a";
+            _driver.FindElement(By.XPath(xPathGoTo)).Click();
+        }
+
         [When(@"Enter email ""([^""]*)""")]
         public void WhenEnterEmail(string eMail)
         {
@@ -29,6 +38,7 @@ namespace LMSAutoTesting.StepDefinitions
         {
             string xPath = @"/html/body/div/div/main/div[1]/form/div[2]/input";
             IWebElement passwordBar=_driver.FindElement(By.XPath(xPath));
+            passwordBar.Clear();
             passwordBar.SendKeys(password);
         }
 
@@ -42,8 +52,8 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            string xPath = @"/html/body/div/div/aside";
-            Assert.Is
+            //string xPath = @"/html/body/div/div/aside";
+            //Assert.Is
         }
     }
 }

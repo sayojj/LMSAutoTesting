@@ -116,14 +116,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
  testRunner.When("Click on <button name> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "button name",
                             "page url"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "Все пользователи",
                             "piter-education.ru:7074/all-users"});
 #line 7
- testRunner.Then("I have to go <page url> page", ((string)(null)), table2, "Then ");
+ testRunner.Then("I have to go <page url> page", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
