@@ -7,36 +7,43 @@ namespace LMSAutoTesting.StepDefinitions
     [Binding]
     public class AuthStepDefinitions
     {
+        public WebDriver _driver;
         [Given(@"Open Auth web page")]
         public void GivenOpenAuthWebPage()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(Urls.AuthPage);
+            _driver = new ChromeDriver();
+            _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl(Urls.AuthPage);
         }
 
         [When(@"Enter email ""([^""]*)""")]
-        public void WhenEnterEmail(string p0)
+        public void WhenEnterEmail(string eMail)
         {
-            throw new PendingStepException();
+            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/input";
+            IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
+            eMailBar.SendKeys(eMail);
         }
 
         [When(@"Enter password ""([^""]*)""")]
-        public void WhenEnterPassword(string p0)
+        public void WhenEnterPassword(string password)
         {
-            throw new PendingStepException();
+            string xPath = @"/html/body/div/div/main/div[1]/form/div[2]/input";
+            IWebElement passwordBar=_driver.FindElement(By.XPath(xPath));
+            passwordBar.SendKeys(password);
         }
 
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            throw new PendingStepException();
+            string xPath = @"/html/body/div/div/main/div[1]/form/div[3]/button[1]";
+            _driver.FindElement(By.XPath(xPath)).Click();
         }
 
-        [Then(@"I have go to go to the site")]
+        [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            throw new PendingStepException();
+            string xPath = @"/html/body/div/div/aside";
+            Assert.Is
         }
     }
 }
