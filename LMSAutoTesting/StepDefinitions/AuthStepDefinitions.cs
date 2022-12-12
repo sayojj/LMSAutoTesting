@@ -52,8 +52,12 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            //string xPath = @"/html/body/div/div/aside";
-            //Assert.Is
+            string expected = "Марина";
+            string xPath = @"/html/body/div/div/aside/div/div[1]/div[2]/div/a/span[2]";
+            IWebElement firstName = _driver.FindElement(By.XPath(xPath));
+            string actual = firstName.Text;
+            Thread.Sleep(500);
+            Assert.Equal(expected, actual);
         }
     }
 }
