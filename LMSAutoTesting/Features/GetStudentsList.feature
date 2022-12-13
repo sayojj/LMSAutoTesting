@@ -2,7 +2,10 @@
 
 @StudentList
 Scenario: Get list of students
-	Given Login as manager
+	Given Open Auth web page
+	When Enter email "marina@example.com"
+	And Enter password "marina123456"
+	And Click Enter buttom
 	When Click on <button name> button
 	Then I have to go <page url> page
 	| button name      | page url                              |
