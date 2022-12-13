@@ -19,16 +19,16 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Ignore security warning")]
         public void GivenIgnoreSecurityWarning()
         {
-            string xPathMore = @"/html/body/div/div[2]/button[3]";
+            string xPathMore = @"//button[@class='secondary-button small-link']";
             _driver.FindElement(By.XPath(xPathMore)).Click();
-            string xPathGoTo = @"/html/body/div/div[3]/p[2]/a";
+            string xPathGoTo = @"//a[@class='small-link']";
             _driver.FindElement(By.XPath(xPathGoTo)).Click();
         }
 
         [When(@"Enter email ""([^""]*)""")]
         public void WhenEnterEmail(string eMail)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/input";
+            string xPath = @"//input[@class='form-input']";
             IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
             eMailBar.SendKeys(eMail);
         }
@@ -47,16 +47,16 @@ namespace LMSAutoTesting.StepDefinitions
         {
             string xPath = @"/html/body/div/div/main/div[1]/form/div[3]/button[1]";
             _driver.FindElement(By.XPath(xPath)).Click();
+            Thread.Sleep(500);
         }
 
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
             string expected = "Марина";
-            string xPath = @"/html/body/div/div/aside/div/div[1]/div[2]/div/a/span[2]";
+            string xPath = @"//span[@class='avatar-name transition-styles']";
             IWebElement firstName = _driver.FindElement(By.XPath(xPath));
             string actual = firstName.Text;
-            Thread.Sleep(500);
             Assert.Equal(expected, actual);
         }
     }
