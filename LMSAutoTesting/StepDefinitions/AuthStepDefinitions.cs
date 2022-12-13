@@ -7,36 +7,57 @@ namespace LMSAutoTesting.StepDefinitions
     [Binding]
     public class AuthStepDefinitions
     {
+        public WebDriver _driver;
         [Given(@"Open Auth web page")]
         public void GivenOpenAuthWebPage()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(Urls.AuthPage);
+            _driver = new ChromeDriver();
+            _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl(Urls.AuthPage);
+        }
+
+        [Given(@"Ignore security warning")]
+        public void GivenIgnoreSecurityWarning()
+        {
+            string xPathMore = @"//button[@class = 'secondary-button small-link']";
+            _driver.FindElement(By.XPath(xPathMore)).Click();
+            string xPathGoTo = @"//a[@class='small-link']";
+            _driver.FindElement(By.XPath(xPathGoTo)).Click();
         }
 
         [When(@"Enter email ""([^""]*)""")]
-        public void WhenEnterEmail(string p0)
+        public void WhenEnterEmail(string eMail)
         {
-            throw new PendingStepException();
+            string xPath = @"//input[@class = 'form-input']";
+            IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
+            eMailBar.SendKeys(eMail);
         }
 
         [When(@"Enter password ""([^""]*)""")]
-        public void WhenEnterPassword(string p0)
+        public void WhenEnterPassword(string password)
         {
-            throw new PendingStepException();
+            string xPath = @"//input[@class = 'form-input custom-password']";
+            IWebElement passwordBar=_driver.FindElement(By.XPath(xPath));
+            passwordBar.Clear();
+            passwordBar.SendKeys(password);
         }
 
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            throw new PendingStepException();
+            string xPath = @"//button[@class = 'sc-bczRLJ iJvUkY btn btn-fill flex-container']";
+            _driver.FindElement(By.XPath(xPath)).Click();
+            Thread.Sleep(500);
         }
 
-        [Then(@"I have go to go to the site")]
+        [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            throw new PendingStepException();
+            string expected = "Марина";
+            string xPath = @"//span[@class = 'avatar-name transition-styles']";
+            IWebElement firstName = _driver.FindElement(By.XPath(xPath));
+            string actual = firstName.Text;
+            Assert.Equal(expected, actual);
         }
     }
 }

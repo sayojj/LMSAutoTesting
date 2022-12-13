@@ -48,10 +48,10 @@ namespace LMSAutoTesting.StepDefinitions
             throw new PendingStepException();
         }
 
-        [Then(@"student registrated")]
-        public void ThenStudentRegistrated()
-        {
-            throw new PendingStepException();
-        }
+        //[Then(@"student registrated")]
+        //public void ThenStudentRegistrated()
+        //{
+        //    throw new PendingStepException();
+        //}
     }
 }
