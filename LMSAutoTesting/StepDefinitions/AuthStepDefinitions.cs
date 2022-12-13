@@ -45,7 +45,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[3]/button[1]";
+            string xPath = @"//button[@class = 'sc-bczRLJ iJvUkY btn btn-fill flex-container']";
             _driver.FindElement(By.XPath(xPath)).Click();
             Thread.Sleep(500);
         }
