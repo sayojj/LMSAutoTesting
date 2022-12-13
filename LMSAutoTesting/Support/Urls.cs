@@ -10,6 +10,6 @@ namespace LMSAutoTesting.Support
     {
         public const string AuthPage = @"https://piter-education.ru:7074/login";
         public const string RegistrationPage = @"https://piter-education.ru:7074/register";
-        public const string PasswordPage = @"https://piter-education.ru:7074/password";
+        public const string HomePage = @"https://piter-education.ru:7074";
     }
 }

@@ -2,8 +2,8 @@
 
 @tag1
 Scenario: ChangePassword
-	Given Open your profil 
+	Given Open your profil
 	When Click edit password
-	And : Text "stariy parol,noviy i povtor"
-	And : click "soxranit"
-	Then : Password changed
+	And zapolnit formu
+	And  click "soxranit"
+	Then  Password changed
