@@ -22,7 +22,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter email '([^']*)'")]
         public void WhenEnterEMail(string eMail)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/input";
+            string xPath = @"//input[@class='form-input']";
             IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
             eMailBar.Clear();
             eMailBar.SendKeys(eMail);
@@ -31,7 +31,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter password '([^']*)'")]
         public void WhenEnterPassword(string password)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[2]/input";
+            string xPath = @"//input[@class='form-input custom-password']";
             IWebElement passwordBar = _driver.FindElement(By.XPath(xPath));
             passwordBar.Clear();
             passwordBar.SendKeys(password);
@@ -40,7 +40,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click login button")]
         public void WhenClickLoginButton()
         {
-            string xPath = @"//*[@id=""root""]/div/main/div[1]/form/div[3]/button[1]";
+            string xPath = @"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']";
             _driver.FindElement(By.XPath(xPath)).Click();
         }
 
@@ -60,7 +60,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter old password again '([^']*)'")]
         public void WhenEnterOldPassword(string oldPassword)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";
+            string xPath = @"//input[@class='form-input form-control ']";
             IWebElement textBox = _driver.FindElement(By.XPath(xPath));
             textBox.SendKeys(oldPassword);
         }
@@ -68,7 +68,8 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter new password '([^']*)'")]
         public void WhenEnterNewPassword(string newPassword)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";
+            string xPath = @"//input[@class=' form-input form-control ']
+";
             IWebElement textBox = _driver.FindElement(By.XPath(xPath));
             textBox.SendKeys(newPassword);
         }
@@ -76,7 +77,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Repeat new password '([^']*)'")]
         public void WhenRepeatPassword(string newPassword)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";
+            //string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";        maksim
             IWebElement textBox = _driver.FindElement(By.XPath(xPath));
             textBox.SendKeys(newPassword);
         }
@@ -85,7 +86,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click save")]
         public void WhenClickSave()
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";
+            string xPath = @"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']";
             IWebElement textBox = _driver.FindElement(By.XPath(xPath));
             textBox.Click();
         }
@@ -93,7 +94,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Log out from the web page")]
         public void WhenLogOutFromTheWebPage()
         {
-            string xPath = "/html/body/div/div/aside/div/div[3]/button/span";
+            string xPath = "//button[@class='exit flex-center']";
             IWebElement exitButton = _driver.FindElement(By.XPath(xPath));
             exitButton.Click();
         }
@@ -119,7 +120,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter new password again '([^']*)'")]
         public void WhenEnterPasswordNew(string password)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[2]/input";
+            string xPath = @"//input[@class='form-input custom-password']";
             IWebElement passwordBar = _driver.FindElement(By.XPath(xPath));
             passwordBar.Clear();
             passwordBar.SendKeys(password);
@@ -128,7 +129,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click login button again")]
         public void WhenClickLoginButtonNew()
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[3]/button[1]";
+            string xPath = @"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']";
             _driver.FindElement(By.XPath(xPath)).Click();
         }
 
