@@ -19,7 +19,7 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Ignore security warning")]
         public void GivenIgnoreSecurityWarning()
         {
-            string xPathMore = @"//button[@class='secondary-button small-link']";
+            string xPathMore = @"//button[@class = 'secondary-button small-link']";
             _driver.FindElement(By.XPath(xPathMore)).Click();
             string xPathGoTo = @"//a[@class='small-link']";
             _driver.FindElement(By.XPath(xPathGoTo)).Click();
@@ -28,7 +28,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter email ""([^""]*)""")]
         public void WhenEnterEmail(string eMail)
         {
-            string xPath = @"//input[@class='form-input']";
+            string xPath = @"//input[@class = 'form-input']";
             IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
             eMailBar.SendKeys(eMail);
         }
@@ -36,7 +36,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Enter password ""([^""]*)""")]
         public void WhenEnterPassword(string password)
         {
-            string xPath = @"/html/body/div/div/main/div[1]/form/div[2]/input";
+            string xPath = @"//input[@class = 'form-input custom-password']";
             IWebElement passwordBar=_driver.FindElement(By.XPath(xPath));
             passwordBar.Clear();
             passwordBar.SendKeys(password);
@@ -54,7 +54,7 @@ namespace LMSAutoTesting.StepDefinitions
         public void ThenIHaveGoToGoToTheSite()
         {
             string expected = "Марина";
-            string xPath = @"//span[@class='avatar-name transition-styles']";
+            string xPath = @"//span[@class = 'avatar-name transition-styles']";
             IWebElement firstName = _driver.FindElement(By.XPath(xPath));
             string actual = firstName.Text;
             Assert.Equal(expected, actual);
