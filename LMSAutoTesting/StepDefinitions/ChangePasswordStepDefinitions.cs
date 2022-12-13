@@ -135,7 +135,7 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"Password changed")]
         public void ThenPasswordChanged()
         {
-            string expected = "https://piter-education.ru:7074/login";
+            string expected = "https://piter-education.ru:7074";
             string actual = _driver.Url;
             Assert.Equal(expected, actual);
         }
