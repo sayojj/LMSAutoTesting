@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AuthFeature : object, Xunit.IClassFixture<AuthFeature.FixtureData>, System.IDisposable
+    public partial class ChangePasswordFeature : object, Xunit.IClassFixture<ChangePasswordFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace LMSAutoTesting.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Auth.feature"
+#line 1 "ChangePassword.feature"
 #line hidden
         
-        public AuthFeature(AuthFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ChangePasswordFeature(ChangePasswordFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace LMSAutoTesting.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Auth", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ChangePassword", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,15 +80,26 @@ namespace LMSAutoTesting.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Auth")]
-        [Xunit.TraitAttribute("FeatureTitle", "Auth")]
-        [Xunit.TraitAttribute("Description", "Auth")]
-        public virtual void Auth()
+        [Xunit.SkippableTheoryAttribute(DisplayName="ChangePassword")]
+        [Xunit.TraitAttribute("FeatureTitle", "ChangePassword")]
+        [Xunit.TraitAttribute("Description", "ChangePassword")]
+        [Xunit.TraitAttribute("Category", "tag1")]
+        [Xunit.InlineDataAttribute("\'marina123456\'", "\'marina12345\'", "\'marina@example.com\'", new string[0])]
+        public virtual void ChangePassword(string oldPassword, string newPassword, string email, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] @__tags = new string[] {
+                    "tag1"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Auth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 3
+            argumentsOfScenario.Add("old password", oldPassword);
+            argumentsOfScenario.Add("new password", newPassword);
+            argumentsOfScenario.Add("email", email);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ChangePassword", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,20 +119,53 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
-testRunner.Given("Open Auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 5
-testRunner.And("Ignore security warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Open Auth webpage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-testRunner.When("Enter email \"marina@example.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Enter email {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
-testRunner.When("Enter password \"marina123456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Enter password {0}", oldPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+ testRunner.And("Open settings web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+ testRunner.And("Click edit password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+ testRunner.And(string.Format("Enter old password again {0}", oldPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+ testRunner.And(string.Format("Enter new password {0}", newPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.And(string.Format("Repeat new password {0}", newPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("Click save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.And("Log out from the web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.And("Open Auth webpage again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.And(string.Format("Enter email again {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+ testRunner.And(string.Format("Enter new password again {0}", newPassword), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.When("Click login button again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
+ testRunner.Then("Password changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -134,12 +178,12 @@ testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Tabl
             
             public FixtureData()
             {
-                AuthFeature.FeatureSetup();
+                ChangePasswordFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AuthFeature.FeatureTearDown();
+                ChangePasswordFeature.FeatureTearDown();
             }
         }
     }
