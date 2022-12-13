@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AuthFeature : object, Xunit.IClassFixture<AuthFeature.FixtureData>, System.IDisposable
+    public partial class GetStudentsListFeature : object, Xunit.IClassFixture<GetStudentsListFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace LMSAutoTesting.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Auth.feature"
+#line 1 "GetStudentsList.feature"
 #line hidden
         
-        public AuthFeature(AuthFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public GetStudentsListFeature(GetStudentsListFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace LMSAutoTesting.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Auth", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "GetStudentsList", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,15 +80,17 @@ namespace LMSAutoTesting.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Auth")]
-        [Xunit.TraitAttribute("FeatureTitle", "Auth")]
-        [Xunit.TraitAttribute("Description", "Auth")]
-        public virtual void Auth()
+        [Xunit.SkippableFactAttribute(DisplayName="Get list of students")]
+        [Xunit.TraitAttribute("FeatureTitle", "GetStudentsList")]
+        [Xunit.TraitAttribute("Description", "Get list of students")]
+        [Xunit.TraitAttribute("Category", "StudentList")]
+        public virtual void GetListOfStudents()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "StudentList"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Auth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get list of students", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,20 +110,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
-testRunner.Given("Open Auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 5
-testRunner.When("Enter email \"anton1@mail.ru\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Open Auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-testRunner.When("Enter password \"антонмантон123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter email \"marina@example.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
-testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Enter password \"marina123456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
-testRunner.Then("I have go to go to the site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Click Enter buttom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+ testRunner.When("Click on <button name> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "button name",
+                            "page url"});
+                table1.AddRow(new string[] {
+                            "Список студентов",
+                            "piter-education.ru:7074/students-list"});
+#line 10
+ testRunner.Then("I have to go <page url> page", ((string)(null)), table1, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -134,12 +145,12 @@ testRunner.Then("I have go to go to the site", ((string)(null)), ((TechTalk.Spec
             
             public FixtureData()
             {
-                AuthFeature.FeatureSetup();
+                GetStudentsListFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AuthFeature.FeatureTearDown();
+                GetStudentsListFeature.FeatureTearDown();
             }
         }
     }
