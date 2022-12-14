@@ -29,7 +29,7 @@ namespace LMSAutoTesting.Support
         [AfterScenario]
         public void AfterScenario()
         {
-            //TODO: implement logic that has to run after executing each scenario
+            DriverStorage.GetInstance().Driver.Close();
         }
     }
 }
