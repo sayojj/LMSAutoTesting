@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LMSAutoTesting.Support
+namespace LMSAutoTesting.Drivers
 {
     public class DriverStorage
     {
@@ -12,7 +12,7 @@ namespace LMSAutoTesting.Support
 
         private static DriverStorage _driverStorage;
 
-        private DriverStorage()
+        private DriverStorage() //?
         {
         }
 

@@ -1,5 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using LMSAutoTesting;
+using LMSAutoTesting.Drivers;
 
 namespace LMSAutoTesting.Support
 {
@@ -29,7 +30,7 @@ namespace LMSAutoTesting.Support
         [AfterScenario]
         public void AfterScenario()
         {
-            DriverStorage.GetInstance().Driver.Close();
+            DriverStorage.GetInstance().Driver.Close(); //driver?
         }
     }
 }
