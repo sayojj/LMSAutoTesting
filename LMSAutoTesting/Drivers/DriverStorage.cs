@@ -8,12 +8,14 @@ namespace LMSAutoTesting.Drivers
 {
     public class DriverStorage
     {
-        public WebDriver driver { get; set; }
+        public WebDriver Driver { get; set; }
 
         private static DriverStorage _driverStorage;
 
-        private DriverStorage() //?
+        private DriverStorage() 
         {
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
         }
 
         public static DriverStorage GetInstance()
