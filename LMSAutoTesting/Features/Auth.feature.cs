@@ -123,6 +123,9 @@ testRunner.When("Enter password \"marina123456\"", ((string)(null)), ((TechTalk.
 #line 8
 testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 9
+testRunner.Then("Menu should be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

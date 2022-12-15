@@ -77,7 +77,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Repeat new password '([^']*)'")]
         public void WhenRepeatPassword(string newPassword)
         {
-            //string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";        maksim
+            string xPath = @"/html/body/div/div/main/div[1]/form/div[1]/div[1]/input";        
             IWebElement textBox = _driver.FindElement(By.XPath(xPath));
             textBox.SendKeys(newPassword);
         }
