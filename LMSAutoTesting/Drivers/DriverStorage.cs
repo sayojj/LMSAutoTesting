@@ -10,7 +10,7 @@ namespace LMSAutoTesting.Drivers
     {
         public WebDriver Driver { get; private set; }
 
-        private static DriverStorage _driverStorage;
+        private static DriverStorage _instance;
 
         private DriverStorage() 
         {
@@ -20,11 +20,11 @@ namespace LMSAutoTesting.Drivers
 
         public static DriverStorage GetInstance()
         {
-            if (_driverStorage is null)
+            if (_instance is null)
             {
-                _driverStorage = new DriverStorage();
+                _instance = new DriverStorage();
             }
-            return _driverStorage;
+            return _instance;
         }
     }
 }
