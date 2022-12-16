@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSAutoTesting.Pages
 {
@@ -12,7 +7,7 @@ namespace LMSAutoTesting.Pages
         public IWebElement moreInfo => _driver.FindElement(By.XPath(@"//button[@class = 'secondary-button small-link']"));
         public IWebElement goTo => _driver.FindElement(By.XPath(@"//a[@class='small-link']"));
 
-        public override void Open()
+        public override void Open() 
         {
         }
 

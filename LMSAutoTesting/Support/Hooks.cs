@@ -1,6 +1,4 @@
-﻿using TechTalk.SpecFlow;
-using LMSAutoTesting;
-using LMSAutoTesting.Drivers;
+﻿using LMSAutoTesting.Drivers;
 
 namespace LMSAutoTesting.Support
 {

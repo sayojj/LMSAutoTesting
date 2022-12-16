@@ -1,6 +1,4 @@
 using LMSAutoTesting.Support;
-using System;
-using TechTalk.SpecFlow;
 using LMSAutoTesting.Drivers;
 
 namespace LMSAutoTesting.StepDefinitions

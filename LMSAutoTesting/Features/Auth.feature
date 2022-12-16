@@ -7,6 +7,3 @@ When Enter email "marina@example.com"
 When Enter password "marina123456"
 When Click enter button
 Then Menu should be opened
-
-
-
