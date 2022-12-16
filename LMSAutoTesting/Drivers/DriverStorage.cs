@@ -8,7 +8,7 @@ namespace LMSAutoTesting.Drivers
 {
     public class DriverStorage
     {
-        public WebDriver Driver { get; set; }
+        public WebDriver Driver { get; private set; }
 
         private static DriverStorage _driverStorage;
 
