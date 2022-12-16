@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Pages
             _driver.Navigate().GoToUrl(Urls.AuthPage);
         }
 
-        public void EnterEmail(string email, string password)
+        public void EnterInfo(string email, string password)
         {
             Actions actions= new Actions(_driver);
             actions.Click(emailBox).SendKeys(email).Build().Perform();

@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Pages
         public void IgnoreAndPass()
         {
             Actions actions= new Actions(_driver);
-            actions.Click(moreInfo).Click(goTo).Perform();
+            actions.Click(moreInfo).Click(goTo).Build().Perform();
         }
     }
 }
