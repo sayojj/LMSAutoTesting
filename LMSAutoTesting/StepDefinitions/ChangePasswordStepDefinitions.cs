@@ -137,6 +137,5 @@ namespace LMSAutoTesting.StepDefinitions
             string actual = _driver.Url;
             Assert.Equal(expected, actual);
         }
-
     }
 }
