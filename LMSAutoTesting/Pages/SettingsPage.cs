@@ -15,7 +15,7 @@ namespace LMSAutoTesting.Pages
 
         public override void Open()
         {
-            _driver.Navigate().GoToUrl(Urls.AuthPage);
+            _driver.Navigate().GoToUrl(Urls.SettingsPage);
         }
     }
 }
