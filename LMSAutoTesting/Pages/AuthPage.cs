@@ -1,7 +1,6 @@
 ﻿using LMSAutoTesting.Support;
 using OpenQA.Selenium.Interactions;
 
-
 namespace LMSAutoTesting.Pages
 {
     public class AuthPage : AbstractPage

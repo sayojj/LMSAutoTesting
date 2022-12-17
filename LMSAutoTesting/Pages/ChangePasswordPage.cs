@@ -1,10 +1,5 @@
 ﻿using LMSAutoTesting.Support;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSAutoTesting.Pages
 {
@@ -19,6 +14,7 @@ namespace LMSAutoTesting.Pages
         {
             _driver.Navigate().GoToUrl(Urls.ChangePasswordPage);
         }
+
         public void EnterPassword(string oldPassword, string newPassword, string repeatNewPassword)
         {
             Actions actions = new Actions(_driver);
@@ -26,6 +22,7 @@ namespace LMSAutoTesting.Pages
             actions.Click(NewPassword).SendKeys(newPassword).Build().Perform();
             actions.Click(RepeatNewPassword).SendKeys(repeatNewPassword).Build().Perform();
         }
+
         public void PressSave()
         {
             Actions actions= new Actions(_driver);

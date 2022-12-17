@@ -10,6 +10,7 @@ namespace LMSAutoTesting.Pages
         {
            _driver=DriverStorage.GetInstance().Driver;
         }
+
         public abstract void Open();
     }
 }

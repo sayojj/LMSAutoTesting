@@ -17,10 +17,17 @@ namespace LMSAutoTesting.Pages
         {
             _driver.Navigate().GoToUrl(Urls.HomePage);
         }
+
         public void PressSettings()
         {
             Actions actions = new Actions(_driver);
             actions.Click(ButtonSettings).Perform();
+        }
+
+        public void PressLogout()
+        {
+            Actions actions = new Actions(_driver);
+            actions.Click(Logout).Perform();
         }
     }
 }

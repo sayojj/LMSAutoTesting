@@ -2,7 +2,7 @@
 
 namespace LMSAutoTesting.Pages
 {
-    public class SecurityWarningPage: AbstractPage
+    public class SecurityWarningPage : AbstractPage
     {
         public IWebElement moreInfo => _driver.FindElement(By.XPath(@"//button[@class = 'secondary-button small-link']"));
         public IWebElement goTo => _driver.FindElement(By.XPath(@"//a[@class='small-link']"));
