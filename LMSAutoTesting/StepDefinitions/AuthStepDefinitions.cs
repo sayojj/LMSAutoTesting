@@ -1,61 +1,52 @@
 using LMSAutoTesting.Support;
 using LMSAutoTesting.Drivers;
+using LMSAutoTesting.Pages;
 
 namespace LMSAutoTesting.StepDefinitions
 {
     [Binding]
     public class AuthStepDefinitions
     {
-        
+
+        AuthPage authPage = new AuthPage();
+        SecurityWarningPage securityPage = new SecurityWarningPage();
+
         [Given(@"Open Auth web page")]
         public void GivenOpenAuthWebPage()
         {
-            DriverStorage driver = DriverStorage.GetInstance();
-            _driver.Navigate().GoToUrl(Urls.AuthPage);
+            authPage.Open();
         }
 
         [Given(@"Ignore security warning")]
         public void GivenIgnoreSecurityWarning()
         {
-            string xPathMore = @"//button[@class = 'secondary-button small-link']";
-            _driver.FindElement(By.XPath(xPathMore)).Click();
-            string xPathGoTo = @"//a[@class='small-link']";
-            _driver.FindElement(By.XPath(xPathGoTo)).Click();
+            securityPage.IgnoreAndPass();
         }
 
         [When(@"Enter email ""([^""]*)""")]
-        public void WhenEnterEmail(string eMail)
+        public void WhenEnterEmail(string email)
         {
-            string xPath = @"//input[@class = 'form-input']";
-            IWebElement eMailBar = _driver.FindElement(By.XPath(xPath));
-            eMailBar.SendKeys(eMail);
+            authPage.EnterEmail(email);
         }
 
         [When(@"Enter password ""([^""]*)""")]
         public void WhenEnterPassword(string password)
         {
-            string xPath = @"//input[@class = 'form-input custom-password']";
-            IWebElement passwordBar=_driver.FindElement(By.XPath(xPath));
-            passwordBar.Clear();
-            passwordBar.SendKeys(password);
+            authPage.EnterPassword(password);
         }
 
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            string xPath = @"//button[@class = 'sc-bczRLJ iJvUkY btn btn-fill flex-container']";
-            _driver.FindElement(By.XPath(xPath)).Click();
-            Thread.Sleep(500);
+            authPage.PressEnter();
         }
 
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
+            DriverStorage storage = DriverStorage.GetInstance();
             string expected = "Марина";
-            string xPath = @"//span[@class = 'avatar-name transition-styles']";
-            IWebElement firstName = _driver.FindElement(By.XPath(xPath));
-            string actual = firstName.Text;
-            Assert.Equal(expected, actual);
+            string actual= storage.Driver.FindElement()
         }
     }
 }
