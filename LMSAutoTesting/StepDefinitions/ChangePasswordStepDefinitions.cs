@@ -1,7 +1,4 @@
 using LMSAutoTesting.Support;
-using System;
-using TechTalk.SpecFlow;
-using static System.Net.WebRequestMethods;
 
 namespace LMSAutoTesting.StepDefinitions
 {
@@ -140,7 +137,5 @@ namespace LMSAutoTesting.StepDefinitions
             string actual = _driver.Url;
             Assert.Equal(expected, actual);
         }
-
     }
 }
- 

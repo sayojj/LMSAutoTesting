@@ -19,5 +19,5 @@ Scenario: ChangePassword
 	When Click login button again
 	Then Password changed
 	Examples: 
-	| old password | new password |       email        |
+	| old password	  | new password  |       email          |
 	| 'marina123456'  | 'marina12345' | 'marina@example.com' |

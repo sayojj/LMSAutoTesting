@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSAutoTesting.Support
+﻿namespace LMSAutoTesting.Support
 {
     public class Urls
     {
@@ -12,5 +6,6 @@ namespace LMSAutoTesting.Support
         public const string RegistrationPage = @"https://piter-education.ru:7074/register";
         public const string HomePage = @"https://piter-education.ru:7074";
         public const string SettingsPage = @"https://piter-education.ru:7074/settings";
+        public const string ChangePasswordPage = @"https://piter-education.ru:7074/change-password";
     }
 }

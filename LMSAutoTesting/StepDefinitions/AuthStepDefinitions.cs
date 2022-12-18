@@ -1,18 +1,16 @@
 using LMSAutoTesting.Support;
-using System;
-using TechTalk.SpecFlow;
+using LMSAutoTesting.Drivers;
 
 namespace LMSAutoTesting.StepDefinitions
 {
     [Binding]
     public class AuthStepDefinitions
     {
-        public WebDriver _driver;
+        
         [Given(@"Open Auth web page")]
         public void GivenOpenAuthWebPage()
         {
-            _driver = new ChromeDriver();
-            _driver.Manage().Window.Maximize();
+            DriverStorage driver = DriverStorage.GetInstance();
             _driver.Navigate().GoToUrl(Urls.AuthPage);
         }
 
