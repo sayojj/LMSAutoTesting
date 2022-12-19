@@ -65,7 +65,7 @@ namespace LMSAutoTesting.Pages
             Actions actions = new Actions(_driver);
             actions.Click(phoneNumber).SendKeys(phonenumber).Build().Perform();
         }
-         public void clickregistrate()
+         public void Clickregistrate()
         {
             Actions actions = new Actions(_driver);
             actions.Click(clickRegistrate).Perform();

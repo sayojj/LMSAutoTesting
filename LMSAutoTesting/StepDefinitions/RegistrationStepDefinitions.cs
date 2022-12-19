@@ -1,3 +1,4 @@
+using LMSAutoTesting.Pages;
 using System;
 using TechTalk.SpecFlow;
 
@@ -6,53 +7,61 @@ namespace LMSAutoTesting.StepDefinitions
     [Binding]
     public class RegistrationStepDefinitions
     {
+        RegistrationPage registrationPage = new RegistrationPage();
+        SecurityWarningPage securityPage = new SecurityWarningPage();
         [Given(@"open register web page")]
         public void GivenOpenRegisterWebPage()
         {
-            throw new PendingStepException();
+            registrationPage.Open();
         }
 
         [When(@"first name is <first name>")]
-        public void WhenFirstNameIsFirstName()
+        public void WhenFirstNameIsFirstName(string firstname)
         {
-            throw new PendingStepException();
+            registrationPage.Enterfirstname(firstname);
         }
 
         [When(@"last name is <last name>")]
-        public void WhenLastNameIsLastName()
+        public void WhenLastNameIsLastName(string lastname)
         {
-            throw new PendingStepException();
+            registrationPage.Enterfirstname(lastname);
         }
 
         [When(@"patronymic is <patronymic>")]
-        public void WhenPatronymicIsPatronymic()
+        public void WhenPatronymicIsPatronymic(string patronymic)
         {
-            throw new PendingStepException();
+            registrationPage.Enterpatronymic(patronymic);
         }
 
 
         [When(@"birthDate is <data>")]
-        public void WhenBirthDateIsData()
+        public void WhenBirthDateIsData(string BirthDate)
         {
-            throw new PendingStepException();
+            registrationPage.Enterbirthdate(BirthDate);
         }
 
         [When(@"email is <email>")]
-        public void WhenEmailIsEmail()
+        public void WhenEmailIsEmail(string email)
         {
-            throw new PendingStepException();
+            registrationPage.Enteremail(email);
         }
 
         [When(@"password is <password>")]
-        public void WhenPasswordIsPassword()
+        public void WhenPasswordIsPassword(string password)
         {
-            throw new PendingStepException();
+            registrationPage.Enterpassword(password);
+        }
+
+        [When(@"Repeat password")]
+        public void WhenRepeatPassword(string repeatpassword)
+        {
+            registrationPage.Enterrepeatpassword(repeatpassword);
         }
 
         [When(@"phone number is <phone number>")]
-        public void WhenPhoneNumberIsPhoneNumber()
+        public void WhenPhoneNumberIsPhoneNumber(string PhoneNumber)
         {
-            throw new PendingStepException();
+            registrationPage.Enterphonenumber(PhoneNumber);
         }
 
         [When(@"click registrate")]
@@ -64,7 +73,7 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"student <registrated>")]
         public void ThenStudentRegistrated()
         {
-            throw new PendingStepException();
+            registrationPage.Clickregistrate();
         }
     }
 }

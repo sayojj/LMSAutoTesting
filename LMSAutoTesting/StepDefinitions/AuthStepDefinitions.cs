@@ -44,9 +44,9 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            DriverStorage storage = DriverStorage.GetInstance();
-            string expected = "Марина";
-            string actual= storage.Driver.FindElement()
+            //DriverStorage storage = DriverStorage.GetInstance();
+            //string expected = "Марина";
+            //string actual= storage.Driver.FindElement()
         }
     }
 }
