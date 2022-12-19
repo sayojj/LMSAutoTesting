@@ -2,7 +2,7 @@
 
 @tag1
 Scenario: ChangeNumber
-	Given Open Auth webpage
+	Given Open Auth webpage 
 	When Enter email <email>
 	When Enter password <password> 
 	When Click login button
@@ -14,4 +14,4 @@ Scenario: ChangeNumber
 	And Open Auth webpage again
 	Examples: 
 	| password	     | new number    |       email          |
-	| 'marina123456' | 'marina12345' | 'marina@example.com' |
+	| 'marina123456' | 'asdas123123' | 'marina@example.com' |
