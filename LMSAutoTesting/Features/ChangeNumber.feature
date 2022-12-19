@@ -14,7 +14,7 @@ Scenario: ChangeNumber
 	When Enter email <email>
 	When Enter password <password> 
 	When Click login button
-	And Open settings web page
+	And Click settings
 	Then Number changed
 	Examples: 
 	| password	     | new number       |       email          |

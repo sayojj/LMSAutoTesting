@@ -156,7 +156,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
- testRunner.And("Open settings web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Click settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
  testRunner.Then("Number changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
