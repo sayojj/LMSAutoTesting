@@ -23,7 +23,8 @@ namespace LMSAutoTesting.Pages
         public void EnterPassword(string password)
         {
             Actions actions = new Actions(_driver);
-            actions.Click(passwordBox).SendKeys(password).Build().Perform();
+            passwordBox.Clear();
+            actions.Click(passwordBox). SendKeys(password).Build().Perform();
         }
 
         public void PressEnter()

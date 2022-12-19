@@ -12,7 +12,8 @@ namespace LMSAutoTesting.Pages
     {
         public IWebElement Logout => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/div[3]/button/span"));
         public IWebElement ButtonSettings => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/nav/a[7]/span"));
-
+        public IWebElement Username => _driver.FindElement(By.XPath(@"//span[@class='avatar-name transition-styles']"));
+       
         public override void Open()
         {
             _driver.Navigate().GoToUrl(Urls.HomePage);
