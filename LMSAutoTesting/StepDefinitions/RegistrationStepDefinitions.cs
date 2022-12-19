@@ -1,54 +1,70 @@
+using System;
+using TechTalk.SpecFlow;
+
 namespace LMSAutoTesting.StepDefinitions
 {
     [Binding]
     public class RegistrationStepDefinitions
     {
-        [Given(@"first name is Anton")]
-        public void GivenFirstNameIsAnton()
+        [Given(@"open register web page")]
+        public void GivenOpenRegisterWebPage()
         {
             throw new PendingStepException();
         }
 
-        [Given(@"last name is Efremenkov")]
-        public void GivenLastNameIsEfremenkov()
+        [When(@"first name is <first name>")]
+        public void WhenFirstNameIsFirstName()
         {
             throw new PendingStepException();
         }
 
-        [Given(@"birthDate is (.*)")]
-        public void GivenBirthDateIs(int p0)
+        [When(@"last name is <last name>")]
+        public void WhenLastNameIsLastName()
         {
             throw new PendingStepException();
         }
 
-        [Given(@"email is anton(.*)@mail\.ru")]
-        public void GivenEmailIsAntonMail_Ru(int p0)
+        [When(@"patronymic is <patronymic>")]
+        public void WhenPatronymicIsPatronymic()
         {
             throw new PendingStepException();
         }
 
-        [Given(@"password is антонмантон(.*)")]
-        public void GivenPasswordIsАнтонмантон(int p0)
+
+        [When(@"birthDate is <data>")]
+        public void WhenBirthDateIsData()
         {
             throw new PendingStepException();
         }
 
-        [Given(@"phone number is \+(.*)")]
-        public void GivenPhoneNumberIs(int p0)
+        [When(@"email is <email>")]
+        public void WhenEmailIsEmail()
         {
             throw new PendingStepException();
         }
 
-        [When(@"new usser is registrated")]
-        public void WhenNewUsserIsRegistrated()
+        [When(@"password is <password>")]
+        public void WhenPasswordIsPassword()
         {
             throw new PendingStepException();
         }
 
-        //[Then(@"student registrated")]
-        //public void ThenStudentRegistrated()
-        //{
-        //    throw new PendingStepException();
-        //}
+        [When(@"phone number is <phone number>")]
+        public void WhenPhoneNumberIsPhoneNumber()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"click registrate")]
+        public void WhenClickRegistrate()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"student <registrated>")]
+        public void ThenStudentRegistrated()
+        {
+            throw new PendingStepException();
+        }
     }
 }
