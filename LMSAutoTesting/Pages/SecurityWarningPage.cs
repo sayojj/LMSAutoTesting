@@ -9,6 +9,7 @@ namespace LMSAutoTesting.Pages
 
         public override void Open() 
         {
+            throw new NotImplementedException();
         }
 
         public void IgnoreAndPass()
