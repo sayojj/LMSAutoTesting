@@ -1,3 +1,4 @@
+﻿using LMSAutoTesting.Drivers;
 using LMSAutoTesting.Pages;
 using System;
 using TechTalk.SpecFlow;
@@ -7,6 +8,8 @@ namespace LMSAutoTesting.StepDefinitions
     [Binding]
     public class RegistrationStepDefinitions
     {
+        HomePage homePage=new HomePage();
+        AuthPage authPage=new AuthPage();
         RegistrationPage registrationPage = new RegistrationPage();
         SecurityWarningPage securityPage = new SecurityWarningPage();
         [Given(@"open register web page")]
@@ -68,6 +71,37 @@ namespace LMSAutoTesting.StepDefinitions
         public void WhenClickRegistrate()
         {
             throw new PendingStepException();
+        }
+
+        [When(@"auth web page")]
+        public void WhenAuthWebPage()
+        {
+            authPage.Open();
+        }
+        [When(@"Enter email ""([^""]*)""")]
+        public void WhenEnterEmail(string email)
+        {
+            authPage.EnterEmail(email);
+        }
+
+        [When(@"Enter password ""([^""]*)""")]
+        public void WhenEnterPassword(string password)
+        {
+            authPage.EnterPassword(password);
+        }
+
+        [When(@"Click enter button")]
+        public void WhenClickEnterButton()
+        {
+            authPage.PressEnter();
+        }
+
+        [Then(@"Menu should be opened")]
+        public void ThenIHaveGoToGoToTheSite()
+        {
+            string expected = "Марина";
+            string actual = homePage.Username.Text;
+            Assert.Equal(expected, actual);
         }
 
         [Then(@"student <registrated>")]

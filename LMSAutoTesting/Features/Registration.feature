@@ -11,8 +11,10 @@ Given open register web page
  When Repeat <password>
  When phone number is <phone number>
  When click registrate
+ When auth web page
  Then student <registrated>
+
  Examples: 
- | first name | last name  | patronymic | data | email          | password       | repeat password | phone number | registrated |
- | Anton      | Efremenkov | Сергеевич  | 30   | anton1@mail.ru | антонмантон123 | антонмантон123  | +712345678   | registrated |
+ | first name | last name  | patronymic | data      |email           | password   | repeat password | phone number | registrated |
+ | Антон    | Алиев         |Сергеевич  | 20.12.2000| anton11@mail.ru | 123454321 | 123454321       | +712345678   | registrated |
  
