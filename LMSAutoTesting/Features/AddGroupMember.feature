@@ -6,10 +6,9 @@ A short summary of the feature
 Scenario: Add member to group
 	Given Open Auth web page
 	Given Ignore security warning
-	When Enter email "[string]"
-	And Enter password "[string]"
+	When Enter email "marina@example.com"
+	And Enter password "marina123456"
 	And Click enter button
-	Given Group created
 	When press groups on HomePage
 	And edit students of group list
 	Then page of students should be opened
