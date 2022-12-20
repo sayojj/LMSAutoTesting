@@ -1,12 +1,7 @@
 ﻿using LMSAutoTesting.Support;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Support;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SeleniumExtras.WaitHelpers;
 
 namespace LMSAutoTesting.Pages
 {
@@ -14,17 +9,17 @@ namespace LMSAutoTesting.Pages
     {
         public IWebElement Logout => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/div[3]/button/span"));
         public IWebElement ButtonSettings => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/nav/a[7]/span"));
-        public IWebElement Username => _driver.FindElement(By.XPath(@"//span[@class='avatar-name transition-styles']"));
+        //public IWebElement Username => _driver.FindElement(By.XPath(@"//span[@class='avatar-name transition-styles']"));
+        public IWebElement Username
+        {
+            get
+            {
+                WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                return driverWait.Until(ExpectedConditions.ElementExists((By.XPath(@"//span[@class='avatar-name transition-styles']")));
+            }
+        }
+        //_driver.FindElement(By.XPath(@"//span[@class='avatar-name transition-styles']"));
 
-        //{
-        //    get
-        //    {
-        //        //WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-        //        //return driverWait.Until(ExpectedConditions.ElementExists((By.XPath(@"//span[@class='avatar-name transition-styles']")));
-        //    }
-        //}
-        //   _driver.FindElement(By.XPath(@"//span[@class='avatar-name transition-styles']"));
-       
         public override void Open()
         {
             _driver.Navigate().GoToUrl(Urls.HomePage);
