@@ -11,6 +11,5 @@ Scenario: Add member to group
 	And Click enter button
 	Given Group created
 	When press groups on HomePage
-	And Choose group from list of groups
 	And edit students of group list
 	Then page of students should be opened
