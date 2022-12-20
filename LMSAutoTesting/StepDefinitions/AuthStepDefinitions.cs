@@ -40,7 +40,6 @@ namespace LMSAutoTesting.StepDefinitions
         public void WhenClickEnterButton()
         {
             authPage.PressEnter();
-            Thread.Sleep(500);
         }
 
         [Then(@"Menu should be opened")]
