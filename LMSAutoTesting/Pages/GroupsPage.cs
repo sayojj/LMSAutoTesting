@@ -14,11 +14,5 @@ namespace LMSAutoTesting.Pages
         {
             throw new NotImplementedException();
         }
-
-        public void PressButton(IWebElement button)
-        {
-            Actions actions = new Actions(_driver);
-            actions.Click(button).Perform();
-        }
     }
 }

@@ -31,11 +31,5 @@ namespace LMSAutoTesting.Pages
         {
             _driver.Navigate().GoToUrl(Urls.HomePage);
         }
-
-        public void PressButton(IWebElement button)
-        {
-            Actions actions = new Actions(_driver);
-            actions.Click(button).Perform();
-        }
     }
 }

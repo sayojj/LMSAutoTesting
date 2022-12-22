@@ -11,6 +11,7 @@ namespace LMSAutoTesting.Pages
 {
     public class RegistrationPage : AbstractPage
     {
+        public IWebElement ButtonLoginInMenu => _driver.FindElement(By.XPath("//a[text()='Вход']"));
         public IWebElement Name => _driver.FindElement(By.XPath(@"//input[@name='firstName']"));
         public IWebElement Surname => _driver.FindElement(By.XPath(@"//input[@class='form-input']"));
         public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//div[@class='date-picker form-input']"));
@@ -20,6 +21,7 @@ namespace LMSAutoTesting.Pages
         public IWebElement RepeatPassword => _driver.FindElement(By.XPath(@"//input[@name='=> _driver.FindElement(By.XPath(@']"));
         public IWebElement Phone => _driver.FindElement(By.XPath(@"//input[@name='phoneNumber']"));
         public IWebElement ClickRegistrate => _driver.FindElement(By.XPath(@"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']"));
+        
         public override void Open()
         {
             _driver.Navigate().GoToUrl(Urls.RegistrationPage);
@@ -36,12 +38,6 @@ namespace LMSAutoTesting.Pages
             actions.Click(Password).SendKeys(password).Build().Perform();
             actions.Click(RepeatPassword).SendKeys(repeatpassword).Build().Perform();
             actions.Click(Phone).SendKeys(phone).Build().Perform();
-        }
-
-         public void Clickregistrate()
-        {
-            Actions actions = new Actions(_driver);
-            actions.Click(ClickRegistrate).Perform();
         }
     }
 }

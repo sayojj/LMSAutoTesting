@@ -1,6 +1,6 @@
-﻿ Feature:Auth
+﻿ Feature:AuthAndRegistration
 
-Scenario:Auth 
+Scenario:Registration 
 	Given Open Registration web page
 	And Ignore security warning
 	When Fill the form

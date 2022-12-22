@@ -36,13 +36,13 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click registrate")]
         public void WhenClickRegistrate()
         {
-            registrationPage.Clickregistrate();
+            registrationPage.PressButton(registrationPage.ClickRegistrate);
         }
 
         [When(@"Click authorize\(menu on the left\)")]
         public void WhenClickAuthorizeMenuOnTheLeft()
         {
-            throw new PendingStepException();
+            registrationPage.PressButton(registrationPage.ButtonLoginInMenu);
         }
 
         [When(@"Enter email ""([^""]*)""")]
@@ -60,13 +60,13 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            authPage.PressEnter();
+            authPage.PressButton(authPage.ButtonLogin);
         }
 
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            string expected = "������";
+            string expected = "Антон";
             string actual = homePage.Username.Text;
             Assert.Equal(expected, actual);
         }
