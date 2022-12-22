@@ -17,7 +17,7 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Open Registration web page")]
         public void GivenOpenRegistrationWebPage()
         {
-            throw new PendingStepException();
+            registrationPage.Open();
         }
 
         [Given(@"Ignore security warning")]
@@ -30,13 +30,13 @@ namespace LMSAutoTesting.StepDefinitions
         public void WhenFillTheForm(Table table)
         {
             var form = table.CreateInstance<Models.RegistrationModel>();
-            registrationPage.EnterInfo(form.Surname,form.Name,form.Patronymic,form.BirthDate,form.Password,form.RepeatPassword,form.Email,form.Phone);
+            registrationPage.EnterInfo(form.Surname, form.Name, form.Patronymic, form.BirthDate, form.Password, form.RepeatPassword, form.Email, form.Phone);
         }
 
         [When(@"Click registrate")]
         public void WhenClickRegistrate()
         {
-            throw new PendingStepException();
+            registrationPage.Clickregistrate();
         }
 
         [When(@"Click authorize\(menu on the left\)")]
@@ -71,4 +71,4 @@ namespace LMSAutoTesting.StepDefinitions
             Assert.Equal(expected, actual);
         }
     }
-}s
+}

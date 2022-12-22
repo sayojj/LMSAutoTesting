@@ -9,7 +9,7 @@ Scenario:Auth
 	And Click registrate
 	And Click authorize(menu on the left)
 	And Ignore security warning
-	When Enter email "marina@example.com"
-	When Enter password "marina123456"
+	When Enter email "anton11@mail.ru"
+	When Enter password "qwerty123456"
 	When Click enter button
 	Then Menu should be opened
