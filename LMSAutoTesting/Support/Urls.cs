@@ -7,5 +7,6 @@
         public const string HomePage = @"https://piter-education.ru:7074";
         public const string SettingsPage = @"https://piter-education.ru:7074/settings";
         public const string ChangePasswordPage = @"https://piter-education.ru:7074/change-password";
+        public const string StudentsListPage = @"https://piter-education.ru:7074/students-list";
     }
 }

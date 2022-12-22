@@ -10,6 +10,7 @@ namespace LMSAutoTesting.StepDefinitions
 
         AuthPage authPage = new AuthPage();
         SecurityWarningPage securityPage = new SecurityWarningPage();
+        HomePage homePage = new HomePage();
 
         [Given(@"Open Auth web page")]
         public void GivenOpenAuthWebPage()
@@ -44,9 +45,9 @@ namespace LMSAutoTesting.StepDefinitions
         [Then(@"Menu should be opened")]
         public void ThenIHaveGoToGoToTheSite()
         {
-            //DriverStorage storage = DriverStorage.GetInstance();
-            //string expected = "Марина";
-            //string actual= storage.Driver.FindElement()
+            string expected = "пїЅпїЅпїЅпїЅпїЅпїЅ";
+            string actual = homePage.Username.Text;
+            Assert.Equal(expected, actual);
         }
     }
 }
