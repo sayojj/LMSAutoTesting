@@ -12,16 +12,34 @@ namespace LMSAutoTesting.StepDefinitions
         SecurityWarningPage securityPage = new SecurityWarningPage();
         HomePage homePage = new HomePage();
 
-        [Given(@"Open Auth web page")]
-        public void GivenOpenAuthWebPage()
+        [Given(@"Open Registration web page")]
+        public void GivenOpenRegistrationWebPage()
         {
-            authPage.Open();
+            throw new PendingStepException();
         }
 
         [Given(@"Ignore security warning")]
         public void GivenIgnoreSecurityWarning()
         {
             securityPage.IgnoreAndPass();
+        }
+
+        [When(@"Fill the form")]
+        public void WhenFillTheForm(Table table)
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"Click registrate")]
+        public void WhenClickRegistrate()
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"Click authorize\(menu on the left\)")]
+        public void WhenClickAuthorizeMenuOnTheLeft()
+        {
+            throw new PendingStepException();
         }
 
         [When(@"Enter email ""([^""]*)""")]

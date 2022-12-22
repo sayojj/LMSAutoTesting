@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class RegistrationFeature : object, Xunit.IClassFixture<RegistrationFeature.FixtureData>, System.IDisposable
+    public partial class RegistrationsFeature : object, Xunit.IClassFixture<RegistrationsFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace LMSAutoTesting.Features
 #line 1 "Registration.feature"
 #line hidden
         
-        public RegistrationFeature(RegistrationFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public RegistrationsFeature(RegistrationsFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace LMSAutoTesting.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Registration", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Registrations", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,14 +81,14 @@ namespace LMSAutoTesting.Features
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Registration")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registration")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registrations")]
         [Xunit.TraitAttribute("Description", "Registration")]
-        [Xunit.TraitAttribute("Category", "registration")]
+        [Xunit.TraitAttribute("Category", "taggg")]
         [Xunit.InlineDataAttribute("Антон", "Алиев", "Сергеевич", "20.12.2000", "anton11@mail.ru", "123454321", "123454321", "+712345678", "registrated", new string[0])]
         public virtual void Registration(string firstName, string lastName, string patronymic, string data, string email, string password, string repeatPassword, string phoneNumber, string registrated, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "registration"};
+                    "taggg"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -126,7 +126,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
-testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
  testRunner.When(string.Format("first name is {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -156,7 +156,7 @@ testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow
  testRunner.When("click registrate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.When("auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Open auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
  testRunner.Then(string.Format("student {0}", registrated), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -172,12 +172,12 @@ testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow
             
             public FixtureData()
             {
-                RegistrationFeature.FeatureSetup();
+                RegistrationsFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                RegistrationFeature.FeatureTearDown();
+                RegistrationsFeature.FeatureTearDown();
             }
         }
     }
