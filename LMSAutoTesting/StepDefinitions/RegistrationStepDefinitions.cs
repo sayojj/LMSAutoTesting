@@ -6,7 +6,7 @@ using TechTalk.SpecFlow.Assist;
 namespace LMSAutoTesting.StepDefinitions
 {
     [Binding]
-    public class AuthStepDefinitions
+    public class RegistrationStepDefinitions
     {
 
         AuthPage authPage = new AuthPage();
@@ -17,7 +17,7 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Open Registration web page")]
         public void GivenOpenRegistrationWebPage()
         {
-            registrationPage.Open();
+            registrationPage.Open(); 
         }
 
         [Given(@"Ignore security warning")]
@@ -29,6 +29,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Fill the form")]
         public void WhenFillTheForm(Table table)
         {
+            authPage.PressButton(authPage.ButtonRegisterInMenu);
             var form = table.CreateInstance<Models.RegistrationModel>();
             registrationPage.EnterInfo(form.Surname, form.Name, form.Patronymic, form.BirthDate, form.Password, form.RepeatPassword, form.Email, form.Phone);
         }

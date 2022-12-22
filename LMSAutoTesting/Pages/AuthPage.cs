@@ -6,6 +6,7 @@ namespace LMSAutoTesting.Pages
     public class AuthPage : AbstractPage
     {
         public IWebElement EmailBox => _driver.FindElement(By.XPath(@"//input[@class = 'form-input']"));
+        public IWebElement ButtonRegisterInMenu => _driver.FindElement(By.XPath(@"//a[text()='Регистрация']"));
         public IWebElement PasswordBox => _driver.FindElement(By.XPath(@"//input[@class = 'form-input custom-password']"));
         public IWebElement ButtonLogin => _driver.FindElement(By.XPath(@"//button[@class = 'sc-bczRLJ iJvUkY btn btn-fill flex-container']"));
         

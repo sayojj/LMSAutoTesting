@@ -1,18 +1,21 @@
 ﻿using LMSAutoTesting.Support;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace LMSAutoTesting.Pages
 {
     public class RegistrationPage : AbstractPage
     {
         public IWebElement ButtonLoginInMenu => _driver.FindElement(By.XPath("//a[text()='Вход']"));
-        public IWebElement Name => _driver.FindElement(By.XPath(@"//input[@name='firstName']"));
+        public IWebElement Name
+        {
+            get
+            {
+                WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                return driverWait.Until(ExpectedConditions.ElementExists(By.XPath("//input[@name='firstName']")));
+            }
+        }
         public IWebElement Surname => _driver.FindElement(By.XPath(@"//input[@class='form-input']"));
         public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//div[@class='date-picker form-input']"));
         public IWebElement Email => _driver.FindElement(By.XPath(@"//div[@class='date-picker form-input']"));
