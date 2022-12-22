@@ -70,7 +70,7 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"click registrate")]
         public void WhenClickRegistrate()
         {
-            throw new PendingStepException();
+            registrationPage.Clickregistrate();
         }
 
         [When(@"auth web page")]
