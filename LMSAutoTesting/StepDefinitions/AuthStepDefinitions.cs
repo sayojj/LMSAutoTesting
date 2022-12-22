@@ -1,6 +1,7 @@
 using LMSAutoTesting.Support;
 using LMSAutoTesting.Drivers;
 using LMSAutoTesting.Pages;
+using TechTalk.SpecFlow.Assist;
 
 namespace LMSAutoTesting.StepDefinitions
 {
@@ -11,6 +12,7 @@ namespace LMSAutoTesting.StepDefinitions
         AuthPage authPage = new AuthPage();
         SecurityWarningPage securityPage = new SecurityWarningPage();
         HomePage homePage = new HomePage();
+        RegistrationPage registrationPage = new RegistrationPage();
 
         [Given(@"Open Registration web page")]
         public void GivenOpenRegistrationWebPage()
@@ -27,7 +29,8 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Fill the form")]
         public void WhenFillTheForm(Table table)
         {
-            throw new PendingStepException();
+            var form = table.CreateInstance<Models.RegistrationModel>();
+            registrationPage.EnterInfo(form.Surname,form.Name,form.Patronymic,form.BirthDate,form.Password,form.RepeatPassword,form.Email,form.Phone);
         }
 
         [When(@"Click registrate")]
@@ -68,4 +71,4 @@ namespace LMSAutoTesting.StepDefinitions
             Assert.Equal(expected, actual);
         }
     }
-}
+}s
