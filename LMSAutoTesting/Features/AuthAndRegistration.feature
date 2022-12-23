@@ -8,7 +8,6 @@ Scenario:Registration
 	| Алиев   | Антон | Сергеевич   | 20.12.2000|qwerty123456  | qwerty123456   | anton11@mail.ru| +712345678 |
 	And Click registrate
 	And Click authorize(menu on the left)
-	And Ignore security warning
 	When Enter email "anton11@mail.ru"
 	When Enter password "qwerty123456"
 	When Click enter button

@@ -17,11 +17,11 @@ namespace LMSAutoTesting.Pages
             }
         }
         public IWebElement Surname => _driver.FindElement(By.XPath(@"//input[@class='form-input']"));
-        public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//div[@class='date-picker form-input']"));
-        public IWebElement Email => _driver.FindElement(By.XPath(@"//div[@class='date-picker form-input']"));
+        public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//input[@class='form-control']"));
+        public IWebElement Email => _driver.FindElement(By.XPath(@"//input[@name='email']"));
         public IWebElement Patronymic => _driver.FindElement(By.XPath(@"//input[@name='patronymic']"));
         public IWebElement Password => _driver.FindElement(By.XPath(@"//input[@class='custom-password form-input']"));
-        public IWebElement RepeatPassword => _driver.FindElement(By.XPath(@"//input[@name='=> _driver.FindElement(By.XPath(@']"));
+        public IWebElement RepeatPassword => _driver.FindElement(By.XPath(@"//input[@name='confirmPassword']"));
         public IWebElement Phone => _driver.FindElement(By.XPath(@"//input[@name='phoneNumber']"));
         public IWebElement ClickRegistrate => _driver.FindElement(By.XPath(@"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']"));
         
@@ -37,10 +37,10 @@ namespace LMSAutoTesting.Pages
             actions.Click(Surname).SendKeys(surname).Build().Perform();
             actions.Click(Patronymic).SendKeys(patronymic).Build().Perform();
             actions.Click(Email).SendKeys(email).Build().Perform();
-            actions.Click(BirthDate).SendKeys(birthdate).Build().Perform();
             actions.Click(Password).SendKeys(password).Build().Perform();
             actions.Click(RepeatPassword).SendKeys(repeatpassword).Build().Perform();
             actions.Click(Phone).SendKeys(phone).Build().Perform();
+            actions.DoubleClick(BirthDate).SendKeys(birthdate).Build().Perform();
         }
     }
 }
