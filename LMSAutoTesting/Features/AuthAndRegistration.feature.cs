@@ -19,7 +19,7 @@ namespace LMSAutoTesting.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class RegistrationFeature : object, Xunit.IClassFixture<RegistrationFeature.FixtureData>, System.IDisposable
+    public partial class AuthAndRegistrationFeature : object, Xunit.IClassFixture<AuthAndRegistrationFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace LMSAutoTesting.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Registration.feature"
+#line 1 "AuthAndRegistration.feature"
 #line hidden
         
-        public RegistrationFeature(RegistrationFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AuthAndRegistrationFeature(AuthAndRegistrationFeature.FixtureData fixtureData, LMSAutoTesting_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace LMSAutoTesting.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Registration", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AuthAndRegistration", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,30 +80,13 @@ namespace LMSAutoTesting.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Registration")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registration")]
+        [Xunit.SkippableFactAttribute(DisplayName="Registration")]
+        [Xunit.TraitAttribute("FeatureTitle", "AuthAndRegistration")]
         [Xunit.TraitAttribute("Description", "Registration")]
-        [Xunit.TraitAttribute("Category", "registration")]
-        [Xunit.InlineDataAttribute("Антон", "Алиев", "Сергеевич", "20.12.2000", "anton11@mail.ru", "123454321", "123454321", "+712345678", "registrated", new string[0])]
-        public virtual void Registration(string firstName, string lastName, string patronymic, string data, string email, string password, string repeatPassword, string phoneNumber, string registrated, string[] exampleTags)
+        public virtual void Registration()
         {
-            string[] @__tags = new string[] {
-                    "registration"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("first name", firstName);
-            argumentsOfScenario.Add("last name", lastName);
-            argumentsOfScenario.Add("patronymic", patronymic);
-            argumentsOfScenario.Add("data", data);
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("repeat password", repeatPassword);
-            argumentsOfScenario.Add("phone number", phoneNumber);
-            argumentsOfScenario.Add("registrated", registrated);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Registration", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
@@ -126,40 +109,49 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
-testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Open Registration web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
- testRunner.When(string.Format("first name is {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Ignore security warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Surname",
+                            "Name",
+                            "Patronymic",
+                            "BirthDate",
+                            "Password",
+                            "RepeatPassword",
+                            "Email",
+                            "Phone"});
+                table1.AddRow(new string[] {
+                            "Алиев",
+                            "Антон",
+                            "Сергеевич",
+                            "20.12.2000",
+                            "qwerty123456",
+                            "qwerty123456",
+                            "anton11@example.com",
+                            "+71234567890"});
 #line 6
- testRunner.When(string.Format("last name is {0}", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 7
- testRunner.When(string.Format("patronymic is {0}", patronymic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
- testRunner.When(string.Format("birthDate is {0}", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Fill the form", ((string)(null)), table1, "When ");
 #line hidden
 #line 9
- testRunner.When(string.Format("email is {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Click registrate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.When(string.Format("password is {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Click authorize(menu on the left)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.When(string.Format("Repeat {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter email \"anton11@example.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.When(string.Format("phone number is {0}", phoneNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter  password \"qwerty123456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.When("click registrate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.When("auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
- testRunner.Then(string.Format("student {0}", registrated), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Menu should be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -172,12 +164,12 @@ testRunner.Given("open register web page", ((string)(null)), ((TechTalk.SpecFlow
             
             public FixtureData()
             {
-                RegistrationFeature.FeatureSetup();
+                AuthAndRegistrationFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                RegistrationFeature.FeatureTearDown();
+                AuthAndRegistrationFeature.FeatureTearDown();
             }
         }
     }

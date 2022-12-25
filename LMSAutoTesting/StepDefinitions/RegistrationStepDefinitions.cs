@@ -1,113 +1,76 @@
-﻿using LMSAutoTesting.Drivers;
+using LMSAutoTesting.Support;
+using LMSAutoTesting.Drivers;
 using LMSAutoTesting.Pages;
-using System;
-using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace LMSAutoTesting.StepDefinitions
 {
     [Binding]
     public class RegistrationStepDefinitions
     {
-        HomePage homePage=new HomePage();
-        AuthPage authPage=new AuthPage();
-        RegistrationPage registrationPage = new RegistrationPage();
+
+        AuthPage authPage = new AuthPage();
         SecurityWarningPage securityPage = new SecurityWarningPage();
-        [Given(@"open register web page")]
-        public void GivenOpenRegisterWebPage()
+        HomePage homePage = new HomePage();
+        RegistrationPage registrationPage = new RegistrationPage();
+
+        [Given(@"Open Registration web page")]
+        public void GivenOpenRegistrationWebPage()
         {
-            registrationPage.Open();
+            registrationPage.Open(); 
         }
 
-        [When(@"first name is <first name>")]
-        public void WhenFirstNameIsFirstName(string firstname)
+        [Given(@"Ignore security warning")]
+        public void GivenIgnoreSecurityWarning()
         {
-            registrationPage.Enterfirstname(firstname);
+            securityPage.IgnoreAndPass();
         }
 
-        [When(@"last name is <last name>")]
-        public void WhenLastNameIsLastName(string lastname)
+        [When(@"Fill the form")]
+        public void WhenFillTheForm(Table table)
         {
-            registrationPage.Enterfirstname(lastname);
+            authPage.PressButton(authPage.ButtonRegisterInMenu);
+            var form = table.CreateInstance<Models.RegistrationModel>();
+            registrationPage.EnterInfo(form.Surname, form.Name, form.Patronymic, form.BirthDate, form.Password, form.RepeatPassword, form.Email, form.Phone);
         }
 
-        [When(@"patronymic is <patronymic>")]
-        public void WhenPatronymicIsPatronymic(string patronymic)
-        {
-            registrationPage.Enterpatronymic(patronymic);
-        }
-
-
-        [When(@"birthDate is <data>")]
-        public void WhenBirthDateIsData(string BirthDate)
-        {
-            registrationPage.Enterbirthdate(BirthDate);
-        }
-
-        [When(@"email is <email>")]
-        public void WhenEmailIsEmail(string email)
-        {
-            registrationPage.Enteremail(email);
-        }
-
-        [When(@"password is <password>")]
-        public void WhenPasswordIsPassword(string password)
-        {
-            registrationPage.Enterpassword(password);
-        }
-
-        [When(@"Repeat password")]
-        public void WhenRepeatPassword(string repeatpassword)
-        {
-            registrationPage.Enterrepeatpassword(repeatpassword);
-        }
-
-        [When(@"phone number is <phone number>")]
-        public void WhenPhoneNumberIsPhoneNumber(string PhoneNumber)
-        {
-            registrationPage.Enterphonenumber(PhoneNumber);
-        }
-
-        [When(@"click registrate")]
+        [When(@"Click registrate")]
         public void WhenClickRegistrate()
         {
-            registrationPage.Clickregistrate();
+            registrationPage.PressButton(registrationPage.ClickRegistrate);
         }
 
-        [When(@"auth web page")]
-        public void WhenAuthWebPage()
+        [When(@"Click authorize\(menu on the left\)")]
+        public void WhenClickAuthorizeMenuOnTheLeft()
         {
-            authPage.Open();
+            registrationPage.PressButton(registrationPage.ButtonLoginInMenu);
         }
+
         [When(@"Enter email ""([^""]*)""")]
         public void WhenEnterEmail(string email)
         {
             authPage.EnterEmail(email);
         }
 
-        [When(@"Enter password ""([^""]*)""")]
+        [When(@"Enter  password ""([^""]*)""")]
         public void WhenEnterPassword(string password)
         {
             authPage.EnterPassword(password);
         }
 
+        
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
-            authPage.PressEnter();
+            authPage.PressButton(authPage.ButtonLogin);
         }
 
         [Then(@"Menu should be opened")]
-        public void ThenIHaveGoToGoToTheSite()
+        public void ThenMenuShouldBeOpened()
         {
-            string expected = "Марина";
+            string expected = "Антон";
             string actual = homePage.Username.Text;
             Assert.Equal(expected, actual);
-        }
-
-        [Then(@"student <registrated>")]
-        public void ThenStudentRegistrated()
-        {
-            registrationPage.Clickregistrate();
         }
     }
 }

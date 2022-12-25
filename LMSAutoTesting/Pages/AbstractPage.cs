@@ -1,4 +1,5 @@
 ﻿using LMSAutoTesting.Drivers;
+using OpenQA.Selenium.Interactions;
 
 namespace LMSAutoTesting.Pages
 {
@@ -12,5 +13,11 @@ namespace LMSAutoTesting.Pages
         }
 
         public abstract void Open();
+
+        public virtual void PressButton(IWebElement button)
+        {
+            Actions actions = new Actions(_driver);
+            actions.Click(button).Perform();
+        }
     }
 }

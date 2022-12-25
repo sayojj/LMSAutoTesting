@@ -23,19 +23,13 @@ namespace LMSAutoTesting.Pages
             get
             {
                 WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-                return driverWait.Until(ExpectedConditions.ElementExists((By.XPath(@"//span[@class='avatar-name transition-styles']"))));
+                return driverWait.Until(ExpectedConditions.ElementExists((By.XPath(@"//span[text()='Антон']"))));
             }
         }
 
         public override void Open()
         {
             _driver.Navigate().GoToUrl(Urls.HomePage);
-        }
-
-        public void PressButton(IWebElement button)
-        {
-            Actions actions = new Actions(_driver);
-            actions.Click(button).Perform();
         }
     }
 }
