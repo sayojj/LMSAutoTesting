@@ -17,6 +17,7 @@ namespace LMSAutoTesting.Pages
             }
         }
         public IWebElement Surname => _driver.FindElement(By.XPath(@"//input[@class='form-input']"));
+        public IWebElement CheckBox => _driver.FindElement(By.XPath(@"//span[@class='custom-checkbox-text']"));
         public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//input[@class='form-control']"));
         public IWebElement Email => _driver.FindElement(By.XPath(@"//input[@name='email']"));
         public IWebElement Patronymic => _driver.FindElement(By.XPath(@"//input[@name='patronymic']"));
@@ -41,6 +42,7 @@ namespace LMSAutoTesting.Pages
             actions.Click(RepeatPassword).SendKeys(repeatpassword).Build().Perform();
             actions.Click(Phone).SendKeys(phone).Build().Perform();
             actions.DoubleClick(BirthDate).SendKeys(birthdate).Build().Perform();
+            actions.Click(CheckBox).Perform();
         }
     }
 }

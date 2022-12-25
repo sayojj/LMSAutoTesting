@@ -1,10 +1,15 @@
 ﻿using LMSAutoTesting.Drivers;
+using System.Data;
+using System.Data.SqlClient;
+using Dapper;
 
 namespace LMSAutoTesting.Support
 {
     [Binding]
     public sealed class Hooks
     {
+        private string _email = "anton11@example.com";
+        private const string CONNECTIONSTRING = @"Data Source = 80.78.240.16; Initial Catalog = DevEdu; Persist Security Info = True; User ID = student; Password = qwe!23;";
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
 
         [BeforeScenario("@tag1")]
@@ -29,6 +34,16 @@ namespace LMSAutoTesting.Support
         public void AfterScenario()
         {
             DriverStorage.GetInstance().Driver.Close(); //driver?
+        }
+
+        [AfterScenario]
+        public void ClientDelete()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(CONNECTIONSTRING))
+            {
+                dbConnection.Query($"delete from User_Role where UserId = (select Id from [User] where Email = '{_email}');");
+                dbConnection.Query($"Delete FROM [DevEdu].[dbo].[User] where Email = '{_email}'");
+            }
         }
     }
 }

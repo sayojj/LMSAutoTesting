@@ -52,12 +52,13 @@ namespace LMSAutoTesting.StepDefinitions
             authPage.EnterEmail(email);
         }
 
-        [When(@"Enter password ""([^""]*)""")]
+        [When(@"Enter  password ""([^""]*)""")]
         public void WhenEnterPassword(string password)
         {
             authPage.EnterPassword(password);
         }
 
+        
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {
@@ -65,7 +66,7 @@ namespace LMSAutoTesting.StepDefinitions
         }
 
         [Then(@"Menu should be opened")]
-        public void ThenIHaveGoToGoToTheSite()
+        public void ThenMenuShouldBeOpened()
         {
             string expected = "Антон";
             string actual = homePage.Username.Text;

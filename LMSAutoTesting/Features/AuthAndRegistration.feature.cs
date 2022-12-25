@@ -130,8 +130,8 @@ this.ScenarioInitialize(scenarioInfo);
                             "20.12.2000",
                             "qwerty123456",
                             "qwerty123456",
-                            "anton11@mail.ru",
-                            "+712345678"});
+                            "anton11@example.com",
+                            "+71234567890"});
 #line 6
  testRunner.When("Fill the form", ((string)(null)), table1, "When ");
 #line hidden
@@ -142,10 +142,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Click authorize(menu on the left)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.When("Enter email \"anton11@mail.ru\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter email \"anton11@example.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.When("Enter password \"qwerty123456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Enter  password \"qwerty123456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
  testRunner.When("Click enter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
