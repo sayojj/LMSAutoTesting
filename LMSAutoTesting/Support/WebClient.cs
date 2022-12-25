@@ -1,4 +1,6 @@
-﻿using LMSAutoTesting.RequestModels;
+﻿using Gherkin;
+using LMSAutoTesting.RequestModels;
+using LMSAutoTesting.ResponseModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,45 +14,23 @@ namespace LMSAutoTesting.Support
 {
     public class WebClient
     {
-        private const string HOST = "https://piter-education.ru:7070";
-        private const string REGISTERHOST = HOST + "/register";
-        public int ClientRegistration(RegistrationRequestModel registrationRequestModel)
+        public int GetUserId(RegistrationRequestModel model)
         {
-
-            string json = JsonSerializer.Serialize<RegistrationRequestModel>(registrationRequestModel);
-
-            HttpResponseMessage responseMessage =SendRequest(HttpMethod.Post, REGISTERHOST, jsonContent: json);
-
-            HttpStatusCode actualCode = responseMessage.StatusCode;
-
-            int id = Convert.ToInt32(responseMessage.Content.ReadAsStringAsync().Result);
-
-            return id;
-        }
-
-        public static HttpResponseMessage SendRequest(HttpMethod httpMethod, string uriString, string token = null, string jsonContent = null)
-        {
+            string json = JsonSerializer.Serialize<RegistrationRequestModel>(model);
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-
             HttpClient client = new HttpClient(clientHandler);
-            if (!string.IsNullOrWhiteSpace(token))
-            {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            }
-
             HttpRequestMessage message = new HttpRequestMessage()
             {
-                Method = httpMethod,
-                RequestUri = new System.Uri(uriString)
+                Method = HttpMethod.Post,
+                RequestUri = new System.Uri($"https://piter-education.ru:7070/register"),
+                Content = new StringContent(json, Encoding.UTF8, "application/json")
             };
-            if (!string.IsNullOrWhiteSpace(jsonContent))
-            {
-                message.Content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-            }
-
             HttpResponseMessage responseMessage = client.Send(message);
-            return responseMessage;
+            string responseJson = responseMessage.Content.ReadAsStringAsync().Result;
+            RegistrationResponseModel User = JsonSerializer.Deserialize<RegistrationResponseModel>(responseJson)!;
+
+            return User.id;
         }
     }
 }
