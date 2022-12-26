@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace LMSAutoTesting.RequestModels
 {
-    public class CourseRequiestModel
+    public class CourseRequestModel
     {
-        public class Root
-        {
             [JsonPropertyName("name")]
             public string name { get; set; }
 
             [JsonPropertyName("description")]
             public string description { get; set; }
-        }
-
     }
 }

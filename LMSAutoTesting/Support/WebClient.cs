@@ -64,5 +64,24 @@ namespace LMSAutoTesting.Support
             };
             HttpResponseMessage responseMessage = client.Send(message);
         }
+        public int GetIdCreatedCourse(string token, CourseRequestModel model)
+        {
+            string json = JsonSerializer.Serialize<CourseRequestModel>(model);
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            HttpClient client = new HttpClient(clientHandler);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpRequestMessage message = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new System.Uri($"https://piter-education.ru:7070/api/Courses"),
+                Content = new StringContent(json, Encoding.UTF8, "application/json")
+            };
+            HttpResponseMessage responseMessage = client.Send(message);
+            string responseJson = responseMessage.Content.ReadAsStringAsync().Result;
+            CourseResponseModel Course = JsonSerializer.Deserialize<CourseResponseModel>(responseJson)!;
+
+            return Course.id;
+        }
     }
 }
