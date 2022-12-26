@@ -14,6 +14,7 @@ namespace LMSAutoTesting.StepDefinitions
         public int _teacherId;
         public int _studentId;
         public int _tutorId;
+        public int _courseId;
         HomePage homePage=new HomePage();
         GroupsPage groupPage=new GroupsPage();
         WebClient client = new WebClient();
@@ -48,11 +49,13 @@ namespace LMSAutoTesting.StepDefinitions
             client.SetRole(_adminToken, _tutorId, "Tutor");
         }
 
-        [Given(@"Create courses as admin")]
-        public void GivenCreateCoursesAsAdmin()
+        [Given(@"Create courses as  admin")]
+        public void GivenCreateCoursesAsAdmin(Table table)
         {
-            throw new PendingStepException();
+           var tab=table.CreateInstance<CourseRequestModel>();
+            _courseId = client.GetIdCreatedCourse(_adminToken, tab);
         }
+
 
         [Given(@"Create group as admin")]
         public void GivenCreateGroupAsAdmin()
