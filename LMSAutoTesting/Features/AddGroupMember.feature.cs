@@ -110,32 +110,52 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
-testRunner.Given("Registrate students with api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Email",
-                            "Password"});
+                            "firstName",
+                            "lastName",
+                            "patronimyc",
+                            "email",
+                            "username",
+                            "password",
+                            "city",
+                            "birthDate",
+                            "gitHubAccount",
+                            "phoneNumber"});
                 table1.AddRow(new string[] {
-                            "marina@example.com",
-                            "marina123456"});
-#line 5
-testRunner.And("Auth as admin with api", ((string)(null)), table1, "And ");
-#line hidden
-#line 8
-testRunner.And("Give second student teacher role as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 9
-testRunner.And("Give third student tutor role as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
-testRunner.And("Create courses as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
-testRunner.And("Create group as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 12
-testRunner.And("Open auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                            "Ken",
+                            "Miles",
+                            "John",
+                            "milesmiles@example.com",
+                            "knmls",
+                            "qwerty123456",
+                            "Baku",
+                            "22.12.2002",
+                            "github.com",
+                            "+71234567890"});
+                table1.AddRow(new string[] {
+                            "Keanu",
+                            "Reeves",
+                            "Morphius",
+                            "keanureeves@example.com",
+                            "knrvs",
+                            "qwerty123456",
+                            "Baku",
+                            "22.12.2002",
+                            "github.com",
+                            "+71234567890"});
+                table1.AddRow(new string[] {
+                            "Yasemen",
+                            "xanim",
+                            "Sasha",
+                            "yasemenxnm@example.com",
+                            "ysmnx",
+                            "qwerty123456",
+                            "Baku",
+                            "22.12.2002",
+                            "github.com",
+                            "+71234567890"});
+#line 4
+testRunner.Given("Registrate students with Api", ((string)(null)), table1, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email",
@@ -143,16 +163,40 @@ testRunner.And("Open auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table
                 table2.AddRow(new string[] {
                             "marina@example.com",
                             "marina123456"});
+#line 9
+testRunner.And("Auth as admin with api", ((string)(null)), table2, "And ");
+#line hidden
+#line 12
+testRunner.And("Give second student teacher role as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 13
-testRunner.And("Auth as admin", ((string)(null)), table2, "And ");
+testRunner.And("Give third student tutor role as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.And("Create courses as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.And("Create group as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
+testRunner.And("Open auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Email",
+                            "Password"});
+                table3.AddRow(new string[] {
+                            "marina@example.com",
+                            "marina123456"});
+#line 17
+testRunner.And("Auth as admin", ((string)(null)), table3, "And ");
+#line hidden
+#line 20
 testRunner.And("Click groups on HomePage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 21
 testRunner.And("Click to edit list of group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 22
 testRunner.Then("Page of students should be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

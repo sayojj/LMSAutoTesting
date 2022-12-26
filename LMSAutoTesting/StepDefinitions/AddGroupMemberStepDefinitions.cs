@@ -25,26 +25,27 @@ namespace LMSAutoTesting.StepDefinitions
             var tab = table.CreateSet<RegistrationRequestModel>().ToList();
             _studentId = client.GetUserId(tab[0]);
             _teacherId = client.GetUserId(tab[1]);
-            _teacherId = client.GetUserId(tab[2]);
+            _tutorId = client.GetUserId(tab[2]);
 
         }
 
         [Given(@"Auth as admin with api")]
         public void GivenAuthAsAdminWithApi(Table table)
         {
-            
+            var tab = table.CreateInstance<AuthRequestModel>();
+            _adminToken = client.Auth(tab);
         }
 
         [Given(@"Give second student teacher role as admin")]
         public void GivenGiveSecondStudentTeacherRoleAsAdmin()
         {
-            throw new PendingStepException();
+            client.SetRole(_adminToken, _teacherId, "Teacher");
         }
 
         [Given(@"Give third student tutor role as admin")]
         public void GivenGiveThirdStudentTutorRoleAsAdmin()
         {
-            throw new PendingStepException();
+            client.SetRole(_adminToken, _tutorId, "Tutor");
         }
 
         [Given(@"Create courses as admin")]
