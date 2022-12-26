@@ -16,6 +16,7 @@ namespace LMSAutoTesting.StepDefinitions
         public int _tutorId;
         public int _courseId;
         HomePage homePage=new HomePage();
+        AuthPage authPage=new AuthPage();
         GroupsPage groupPage=new GroupsPage();
         WebClient client = new WebClient();
         
@@ -67,13 +68,14 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Open auth web page")]
         public void GivenOpenAuthWebPage()
         {
-            throw new PendingStepException();
+            authPage.Open();
         }
 
         [Given(@"Auth as admin")]
         public void GivenAuthAsAdmin(Table table)
         {
-            throw new PendingStepException();
+            var tab = table.CreateInstance<>();
+            authPage.EnterEmail()
         }
 
         [Given(@"Click groups on HomePage")]

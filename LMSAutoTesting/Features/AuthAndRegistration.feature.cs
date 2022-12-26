@@ -114,7 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
  testRunner.And("Ignore security warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Surname",
                             "Name",
                             "Patronymic",
@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "RepeatPassword",
                             "Email",
                             "Phone"});
-                table4.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Алиев",
                             "Антон",
                             "Сергеевич",
@@ -133,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "anton11@example.com",
                             "+71234567890"});
 #line 6
- testRunner.When("Fill the form", ((string)(null)), table4, "When ");
+ testRunner.When("Fill the form", ((string)(null)), table6, "When ");
 #line hidden
 #line 9
  testRunner.And("Click registrate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
