@@ -83,5 +83,25 @@ namespace LMSAutoTesting.Support
 
             return Course.id;
         }
+
+        public int GetIdCreatedGroup(string token, GroupRequestModel model)
+        {
+            string json = JsonSerializer.Serialize<GroupRequestModel>(model);
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            HttpClient client = new HttpClient(clientHandler);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpRequestMessage message = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new System.Uri($"https://piter-education.ru:7070/api/Groups"),
+                Content = new StringContent(json, Encoding.UTF8, "application/json")
+            };
+            HttpResponseMessage responseMessage = client.Send(message);
+            string responseJson = responseMessage.Content.ReadAsStringAsync().Result;
+            GroupResponseModel Group = JsonSerializer.Deserialize<GroupResponseModel>(responseJson)!;
+
+            return Group.id;
+        }
     }
 }

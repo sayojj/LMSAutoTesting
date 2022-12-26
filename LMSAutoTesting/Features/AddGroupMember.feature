@@ -11,8 +11,12 @@ And Auth as admin with api
  | marina@example.com | marina123456 |
 And Give second student teacher role as admin
 And Give third student tutor role as admin
-And Create courses as admin
-And Create group as admin
+And Create courses as  admin
+| name    | description |
+| C# QA&A | abcdefu     |
+And Create group as  admin
+| name | courseId | groupStatusId | startData | endDate   | timetable | paymentPerMonth | paymentsCount |
+|string| 2993     |   Forming     |10.10.2022 |22.10.2022 |  string   |      0          |     20        |
 And Open auth web page
 And Auth as admin 
  | Email              | Password     |

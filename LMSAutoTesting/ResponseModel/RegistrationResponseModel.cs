@@ -56,7 +56,7 @@ namespace LMSAutoTesting.ResponseModel
             public List<Group> groups { get; set; }
 
     }
-        public class Course
+    public class Course
     {
         [JsonPropertyName("id")]
         public int id { get; set; }
@@ -96,5 +96,5 @@ namespace LMSAutoTesting.ResponseModel
 
         [JsonPropertyName("paymentsCount")]
         public int paymentsCount { get; set; }
-        }
+    }
 }

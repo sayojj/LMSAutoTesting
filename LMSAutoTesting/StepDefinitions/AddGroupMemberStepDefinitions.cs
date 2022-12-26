@@ -57,10 +57,11 @@ namespace LMSAutoTesting.StepDefinitions
         }
 
 
-        [Given(@"Create group as admin")]
-        public void GivenCreateGroupAsAdmin()
+        [Given(@"Create group as  admin")]
+        public void GivenCreateGroupAsAdmin(Table table)
         {
-            throw new PendingStepException();
+            var tab = table.CreateInstance<GroupRequestModel>();
+            client.GetIdCreatedGroup(_adminToken, tab);
         }
 
         [Given(@"Open auth web page")]

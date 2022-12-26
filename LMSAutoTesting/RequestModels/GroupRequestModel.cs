@@ -2,11 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace LMSAutoTesting.RequestModels
 {
-    internal class GroupRequestModel
+    public class GroupRequestModel
     {
+        [JsonPropertyName("name")]
+        public string name { get; set; }
+
+        [JsonPropertyName("courseId")]
+        public int courseId { get; set; }
+
+        [JsonPropertyName("groupStatusId")]
+        public string groupStatusId { get; set; }
+
+        [JsonPropertyName("startDate")]
+        public string startDate { get; set; }
+
+        [JsonPropertyName("endDate")]
+        public string endDate { get; set; }
+
+        [JsonPropertyName("timetable")]
+        public string timetable { get; set; }
+
+        [JsonPropertyName("paymentPerMonth")]
+        public int paymentPerMonth { get; set; }
+
+        [JsonPropertyName("paymentsCount")]
+        public int paymentsCount { get; set; }
     }
 }
