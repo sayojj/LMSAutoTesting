@@ -1,21 +1,22 @@
 ﻿Feature: AddGroupMember
 @tag1
 Scenario: Add member to group
-Given Registration as student1 api
-And Auth as admin api
+Given Registrate students with Api
+| firstName | lastName | patronimyc | email                  | username | password     | city | birthDate  | gitHubAccount | phoneNumber  |
+| Ken       | Miles    | John       | milesmiles@example.com | knmls    | qwerty123456 | Baku | 22.12.2002 | github.com    | +71234567890 |
+| Keanu     | Reeves   | Morphius   | keanureeves@example.com| knrvs    | qwerty123456 | Baku | 22.12.2002 | github.com    | +71234567890 |
+| Yasemen   | xanim    | Sasha      | yasemenxnm@example.com | ysmnx    | qwerty123456 | Baku | 22.12.2002 | github.com    | +71234567890 |
+And Auth as admin with api
  | Email              | Password     |
  | marina@example.com | marina123456 |
-And Give student2 teacher role as admin
-And Give student3 tutor role as admin
-And Create courses by admin
-And Create group by admin
-And Add users in group as admin
+And Give second student teacher role as admin
+And Give third student tutor role as admin
+And Create courses as admin
+And Create group as admin
 And Open auth web page
 And Auth as admin 
  | Email              | Password     |
  | marina@example.com | marina123456 |
-And Click to the role button
-And Click to  the button admin
-And Click to "groups"
-And Click to "edit gruops list"
+And Click groups on HomePage
+And Click to edit list of group
 Then Page of students should be opened
