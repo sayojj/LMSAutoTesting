@@ -1,4 +1,5 @@
 using LMSAutoTesting.Drivers;
+using LMSAutoTesting.Models;
 using LMSAutoTesting.Pages;
 using LMSAutoTesting.RequestModels;
 using LMSAutoTesting.Support;
@@ -75,8 +76,9 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Auth as admin")]
         public void GivenAuthAsAdmin(Table table)
         {
-            var tab = table.CreateInstance<>();
-            authPage.EnterEmail()
+            var tab = table.CreateInstance<AuthorizeModel>();
+            authPage.EnterEmail(tab.Email);
+            authPage.EnterPassword(tab.Password);
         }
 
         [Given(@"Click groups on HomePage")]
