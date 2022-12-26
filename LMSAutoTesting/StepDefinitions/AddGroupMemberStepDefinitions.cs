@@ -1,3 +1,4 @@
+using LMSAutoTesting.Drivers;
 using LMSAutoTesting.Pages;
 using LMSAutoTesting.RequestModels;
 using LMSAutoTesting.Support;
@@ -81,19 +82,22 @@ namespace LMSAutoTesting.StepDefinitions
         [Given(@"Click groups on HomePage")]
         public void GivenClickGroupsOnHomePage()
         {
-            throw new PendingStepException();
+            homePage.PressButton(homePage.ButtonGroups);
         }
 
         [Given(@"Click to edit list of group")]
         public void GivenClickToEditListOfGroup()
         {
-            throw new PendingStepException();
+            groupPage.PressButton(groupPage.ButtonEditList);
         }
 
         [Then(@"Page of students should be opened")]
         public void ThenPageOfStudentsShouldBeOpened()
         {
-            throw new PendingStepException();
+            DriverStorage storage = DriverStorage.GetInstance();
+            string expected = Urls.StudentsListPage;
+            string actual = storage.Driver.Url;
+            Assert.Equal(expected, actual);
         }
     }
 }
