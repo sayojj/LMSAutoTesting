@@ -1,5 +1,5 @@
 ﻿Feature: AddGroupMember
-@tag1
+@editgroup
 Scenario: Add member to group
 Given Registrate students with Api
 | firstName | lastName | patronimyc | email                  | username | password     | city | birthDate  | gitHubAccount | phoneNumber  |

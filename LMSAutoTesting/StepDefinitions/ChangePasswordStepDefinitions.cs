@@ -11,6 +11,7 @@ namespace LMSAutoTesting.StepDefinitions
        HomePage homePage=new HomePage();  
        SettingsPage settingsPage=new SettingsPage();
        ChangePasswordPage changePasswordPage=new ChangePasswordPage();
+
         [Given(@"Open Auth webpage")]
         public void GivenOpenAuthWebpage()
         {

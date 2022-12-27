@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Interactions;
+﻿using LMSAutoTesting.Support;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,10 @@ namespace LMSAutoTesting.Pages
     public class GroupsPage : AbstractPage
     {
         public IWebElement ButtonEditList => _driver.FindElement(By.XPath("//a[@href='/']"));
+
         public override void Open()
         {
-            throw new NotImplementedException();
+            _driver.Navigate().GoToUrl(Urls.GroupsPage);
         }
     }
 }

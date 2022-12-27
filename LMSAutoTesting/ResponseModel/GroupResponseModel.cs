@@ -35,7 +35,8 @@ namespace LMSAutoTesting.ResponseModel
 
             [JsonPropertyName("paymentsCount")]
             public int paymentsCount { get; set; }
-        public class Course
+        
+         public class Course
         {
             [JsonPropertyName("id")]
             public int id { get; set; }
@@ -46,7 +47,5 @@ namespace LMSAutoTesting.ResponseModel
             [JsonPropertyName("isDeleted")]
             public bool isDeleted { get; set; }
         }
-
-
     }
 }

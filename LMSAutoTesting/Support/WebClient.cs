@@ -64,6 +64,7 @@ namespace LMSAutoTesting.Support
             };
             HttpResponseMessage responseMessage = client.Send(message);
         }
+
         public int GetIdCreatedCourse(string token, CourseRequestModel model)
         {
             string json = JsonSerializer.Serialize<CourseRequestModel>(model);

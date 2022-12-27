@@ -1,6 +1,5 @@
 ﻿Feature: ChangeNumber
-
-@tag1
+@editnumber
 Scenario: ChangeNumber
 	Given Open Auth webpage 
 	When Enter email <email>

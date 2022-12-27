@@ -5,7 +5,7 @@ namespace LMSAutoTesting.Pages
 {
     public abstract class AbstractPage
     {
-        protected WebDriver _driver;   //Cделать public для SecurityWarningPage(open)
+        protected WebDriver _driver;   
 
         public AbstractPage()
         {

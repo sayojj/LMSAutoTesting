@@ -1,6 +1,5 @@
 ﻿Feature: ChangePassword
-
-@tag1
+@editpassword
 Scenario: ChangePassword
 	Given Open Auth webpage
 	When Enter email <email>

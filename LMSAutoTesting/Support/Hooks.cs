@@ -12,7 +12,6 @@ namespace LMSTestingProjectQAABaku.Support
         [BeforeScenario]
         public void BeforeScenario()
         {
-
             string connectionString = @"Data Source = 80.78.240.16; Initial Catalog = DevEdu; Persist Security Info = True; User ID = student; Password = qwe!23;";
             IDbConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();

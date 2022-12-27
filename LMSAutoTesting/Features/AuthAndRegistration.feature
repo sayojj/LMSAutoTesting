@@ -1,5 +1,4 @@
 ﻿ Feature:AuthAndRegistration
-
 Scenario:Registration 
 	Given Open Registration web page
 	And Ignore security warning

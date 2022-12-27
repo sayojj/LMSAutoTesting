@@ -8,7 +8,6 @@ namespace LMSAutoTesting.StepDefinitions
     [Binding]
     public class RegistrationStepDefinitions
     {
-
         AuthPage authPage = new AuthPage();
         SecurityWarningPage securityPage = new SecurityWarningPage();
         HomePage homePage = new HomePage();

@@ -22,7 +22,6 @@ namespace LMSAutoTesting.StepDefinitions
         GroupsPage groupPage=new GroupsPage();
         WebClient client = new WebClient();
         
-
         [Given(@"Registrate students with Api")]
         public void GivenRegistrateStudentsWithApi(Table table)
         {
