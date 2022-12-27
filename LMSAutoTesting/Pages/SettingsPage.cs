@@ -16,7 +16,7 @@ namespace LMSAutoTesting.Pages
         public void PressChangePassword()
         {
             Actions actions = new Actions(_driver);
-            actions.Click(ButtonChangePassword).Perform();
+            actions.Click(ButtonEditPassword).Perform();
         }
     }
 }

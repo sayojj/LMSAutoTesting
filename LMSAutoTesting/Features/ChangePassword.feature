@@ -13,7 +13,6 @@ Scenario: ChangePassword
 	And Repeat new password <new password>
 	And Click save
 	And Log out from the web page
-	And Open Auth webpage again
 	And Enter email again <email>
 	And Enter new password again <new password>
 	When Click login button again
