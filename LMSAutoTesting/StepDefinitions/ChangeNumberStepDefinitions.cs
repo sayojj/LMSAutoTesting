@@ -13,13 +13,13 @@ namespace LMSAutoTesting.StepDefinitions
         [When(@"Click settings")]
         public void WhenClickSettings()
         {
-            homePage.PressSettings();
+            homePage.PressButton(homePage.ButtonSettings);
         }
 
         [When(@"Click number")]
         public void WhenClickNumber()
         {
-            settingsPage.PressNumber();
+            settingsPage.PressButton(settingsPage.NumberBox);
         }
 
         [When(@"Enter new number '([^']*)'")]

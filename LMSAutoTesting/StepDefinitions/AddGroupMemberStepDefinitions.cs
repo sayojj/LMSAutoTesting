@@ -81,6 +81,13 @@ namespace LMSAutoTesting.StepDefinitions
             authPage.EnterPassword(tab.Password);
         }
 
+        [Given(@"Click login button")]
+        public void GivenClickLoginButton()
+        {
+            authPage.PressButton(authPage.ButtonLogin);
+        }
+
+
         [Given(@"Click groups on HomePage")]
         public void GivenClickGroupsOnHomePage()
         {

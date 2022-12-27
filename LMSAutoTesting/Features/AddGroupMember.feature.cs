@@ -205,22 +205,28 @@ testRunner.And("Create group as  admin", ((string)(null)), table4, "And ");
 #line 20
 testRunner.And("Open auth web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 21
+testRunner.And("Ignore security warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email",
                             "Password"});
                 table5.AddRow(new string[] {
                             "marina@example.com",
                             "marina123456"});
-#line 21
+#line 22
 testRunner.And("Auth as admin", ((string)(null)), table5, "And ");
 #line hidden
-#line 24
-testRunner.And("Click groups on HomePage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 25
-testRunner.And("Click to edit list of group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
+testRunner.And("Click groups on HomePage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+testRunner.And("Click to edit list of group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
 testRunner.Then("Page of students should be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

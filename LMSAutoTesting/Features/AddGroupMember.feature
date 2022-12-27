@@ -18,9 +18,11 @@ And Create group as  admin
 | name | courseId | groupStatusId | startData | endDate   | timetable | paymentPerMonth | paymentsCount |
 |string| 2993     |   Forming     |10.10.2022 |22.10.2022 |  string   |      0          |     20        |
 And Open auth web page
+And Ignore security warning
 And Auth as admin 
  | Email              | Password     |
  | marina@example.com | marina123456 |
+And Click login button
 And Click groups on HomePage
 And Click to edit list of group
 Then Page of students should be opened

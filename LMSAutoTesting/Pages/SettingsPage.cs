@@ -18,5 +18,11 @@ namespace LMSAutoTesting.Pages
             Actions actions = new Actions(_driver);
             actions.Click(ButtonEditPassword).Perform();
         }
+
+        public void EnterNewNumber(string number)
+        {
+            Actions actions = new Actions(_driver);
+            actions.SendKeys(number).Perform();
+        }
     }
 }
