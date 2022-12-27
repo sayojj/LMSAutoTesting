@@ -15,12 +15,22 @@ namespace LMSAutoTesting.Pages
             _driver.Navigate().GoToUrl(Urls.ChangePasswordPage);
         }
 
-        public void EnterPassword(string oldPassword, string newPassword, string repeatNewPassword)
+        public void EnterOldPassword(string oldPassword)
         {
             Actions actions = new Actions(_driver);
-            actions.Click(OldPassword).SendKeys(oldPassword).Build().Perform();
-            actions.Click(NewPassword).SendKeys(newPassword).Build().Perform();
-            actions.Click(RepeatNewPassword).SendKeys(repeatNewPassword).Build().Perform();
+            actions.SendKeys(oldPassword).Build().Perform();    
+        }
+
+        public void EnterNewPassword(string newPassword)
+        {
+            Actions actions = new Actions(_driver);
+            actions.SendKeys(newPassword).Build().Perform();
+        }
+
+        public void EnterRepeatNewPassword(string repeatNewPassword)
+        {
+            Actions actions = new Actions(_driver);
+            actions.SendKeys(repeatNewPassword).Build().Perform();
         }
     }
 }

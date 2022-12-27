@@ -51,18 +51,21 @@ namespace LMSAutoTesting.StepDefinitions
         public void WhenEnterOldPassword(string oldPassword)
         {
             changePasswordPage.PressButton(changePasswordPage.OldPassword);
+            changePasswordPage.EnterOldPassword(oldPassword);
         }
 
         [When(@"Enter new password '([^']*)'")]
         public void WhenEnterNewPassword(string newPassword)
         {
             changePasswordPage.PressButton(changePasswordPage.NewPassword);
+            changePasswordPage.EnterNewPassword(newPassword);
         }
 
         [When(@"Repeat new password '([^']*)'")]
         public void WhenRepeatPassword(string newPassword)
         {
             changePasswordPage.PressButton(changePasswordPage.RepeatNewPassword);
+            changePasswordPage.EnterRepeatNewPassword(newPassword);
         }
 
 
