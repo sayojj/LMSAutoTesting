@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 using Dapper;
-using LMSAutoTesting.StepDefinitions;
 
 namespace LMSTestingProjectQAABaku.Support
 {

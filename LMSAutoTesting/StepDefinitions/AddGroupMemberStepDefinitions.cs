@@ -3,8 +3,6 @@ using LMSAutoTesting.Models;
 using LMSAutoTesting.Pages;
 using LMSAutoTesting.RequestModels;
 using LMSAutoTesting.Support;
-using System;
-using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
 namespace LMSAutoTesting.StepDefinitions
