@@ -2,6 +2,7 @@
 @editpassword
 Scenario: ChangePassword
 	Given Open Auth webpage
+	Given Ignore security warning
 	When Enter email <email>
 	When Enter password <old password> 
 	When Click login button
