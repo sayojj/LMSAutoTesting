@@ -84,7 +84,7 @@ namespace LMSAutoTesting.Features
         [Xunit.TraitAttribute("FeatureTitle", "ChangeNumber")]
         [Xunit.TraitAttribute("Description", "ChangeNumber")]
         [Xunit.TraitAttribute("Category", "editnumber")]
-        [Xunit.InlineDataAttribute("\'marina123456\'", "\'32432142123123\'", "\'marina@example.com\'", new string[0])]
+        [Xunit.InlineDataAttribute("\'marina123456\'", "\'77786666699\'", "\'marina@example.com\'", new string[0])]
         public virtual void ChangeNumber(string password, string newNumber, string email, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -144,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Enter new number {0}", newNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.And("Click save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Click save settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.And("Log out from the web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

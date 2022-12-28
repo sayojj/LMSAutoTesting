@@ -9,7 +9,7 @@ Scenario: ChangeNumber
 	And Click settings
 	And Click number
 	And Enter new number <new number>
-	And Click save
+	And Click save settings
 	And Log out from the web page
 	When Enter email <email>
 	When Enter password <password> 
@@ -17,5 +17,5 @@ Scenario: ChangeNumber
 	And Click settings
 	Then Number changed
 	Examples: 
-	| password	     | new number       |       email          |
-	| 'marina123456' | '32432142123123' | 'marina@example.com' |
+	| password	     |     new number     |       email          |
+	|'marina123456' |'77786666699'	  |'marina@example.com' |

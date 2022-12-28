@@ -28,10 +28,17 @@ namespace LMSAutoTesting.StepDefinitions
             settingsPage.EnterNewNumber(newNumber);
         }
 
+        [When(@"Click save settings")]
+        public void WhenClickSaveSettings()
+        {
+            settingsPage.PressButton(settingsPage.ButtonSaveSettings);
+        }
+
+
         [Then(@"Number changed")]
         public void ThenNumberChanged()
         {
-            string expected = "32432142123123";
+            string expected = "77788666699";
             string actual = settingsPage.NumberBox.Text;
             Assert.Equal(expected, actual);
         }

@@ -17,7 +17,7 @@ namespace LMSAutoTesting.Pages
         public virtual void PressButton(IWebElement button)
         {
             Actions actions = new Actions(_driver);
-            actions.Click(button).Perform();
+            actions.DoubleClick(button).Perform();
         }
     }
 }

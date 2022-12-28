@@ -17,7 +17,14 @@ namespace LMSAutoTesting.Pages
             }
         }
         public IWebElement ButtonStudentsList => _driver.FindElement(By.XPath(@"//a[@href='/students-list']"));
-        public IWebElement ButtonSettings => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/nav/a[7]/span"));
+        public IWebElement ButtonSettings
+        {
+            get
+            {
+                WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                return driverWait.Until(ExpectedConditions.ElementExists((By.XPath(@"//span[text()='Максина']"))));
+            }
+        }
         public IWebElement Username
         {
             get
