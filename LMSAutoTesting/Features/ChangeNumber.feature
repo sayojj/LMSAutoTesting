@@ -2,6 +2,7 @@
 @editnumber
 Scenario: ChangeNumber
 	Given Open Auth webpage 
+	And Ignore security warning
 	When Enter email <email>
 	When Enter password <password> 
 	When Click login button

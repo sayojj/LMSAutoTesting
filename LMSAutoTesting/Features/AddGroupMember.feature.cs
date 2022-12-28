@@ -83,11 +83,11 @@ namespace LMSAutoTesting.Features
         [Xunit.SkippableFactAttribute(DisplayName="Add member to group")]
         [Xunit.TraitAttribute("FeatureTitle", "AddGroupMember")]
         [Xunit.TraitAttribute("Description", "Add member to group")]
-        [Xunit.TraitAttribute("Category", "tag1")]
+        [Xunit.TraitAttribute("Category", "editgroup")]
         public virtual void AddMemberToGroup()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "editgroup"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add member to group", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 3

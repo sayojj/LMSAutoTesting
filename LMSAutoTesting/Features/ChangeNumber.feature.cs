@@ -83,12 +83,12 @@ namespace LMSAutoTesting.Features
         [Xunit.SkippableTheoryAttribute(DisplayName="ChangeNumber")]
         [Xunit.TraitAttribute("FeatureTitle", "ChangeNumber")]
         [Xunit.TraitAttribute("Description", "ChangeNumber")]
-        [Xunit.TraitAttribute("Category", "tag1")]
+        [Xunit.TraitAttribute("Category", "editnumber")]
         [Xunit.InlineDataAttribute("\'marina123456\'", "\'32432142123123\'", "\'marina@example.com\'", new string[0])]
         public virtual void ChangeNumber(string password, string newNumber, string email, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "editnumber"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -99,7 +99,7 @@ namespace LMSAutoTesting.Features
             argumentsOfScenario.Add("new number", newNumber);
             argumentsOfScenario.Add("email", email);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ChangeNumber", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 4
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -119,8 +119,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 4
  testRunner.Given("Open Auth webpage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+ testRunner.And("Ignore security warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 6
  testRunner.When(string.Format("Enter email {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
