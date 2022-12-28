@@ -1,5 +1,4 @@
-﻿
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace LMSAutoTesting.ResponseModel
 {
@@ -61,7 +60,6 @@ namespace LMSAutoTesting.ResponseModel
             [JsonPropertyName("isDeleted")]
             public bool isDeleted { get; set; }
     }
-
     public class Group
     {
             [JsonPropertyName("id")]

@@ -18,4 +18,4 @@ Scenario: ChangeNumber
 	Then Number changed
 	Examples: 
 	| password	     |     new number     |       email          |
-	|'marina123456' |'77786666699'	  |'marina@example.com' |
+	| 'marina123456' |   '77786666699'	  | 'marina@example.com' |

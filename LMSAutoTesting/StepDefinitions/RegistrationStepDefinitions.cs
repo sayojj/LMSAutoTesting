@@ -57,7 +57,6 @@ namespace LMSAutoTesting.StepDefinitions
             authPage.EnterPassword(password);
         }
 
-        
         [When(@"Click enter button")]
         public void WhenClickEnterButton()
         {

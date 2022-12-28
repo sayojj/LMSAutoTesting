@@ -69,7 +69,6 @@ namespace LMSAutoTesting.StepDefinitions
             changePasswordPage.EnterRepeatNewPassword(newPassword);
         }
 
-
         [When(@"Click save")]
         public void WhenClickSave()
         {

@@ -1,5 +1,4 @@
 ﻿using LMSAutoTesting.Support;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -8,6 +7,7 @@ namespace LMSAutoTesting.Pages
     public class HomePage : AbstractPage
     {
         public IWebElement Logout => _driver.FindElement(By.XPath(@"/html/body/div/div/aside/div/div[3]/button/span"));
+        public IWebElement ButtonStudentsList => _driver.FindElement(By.XPath(@"//a[@href='/students-list']"));
         public IWebElement ButtonGroups
         {
             get
@@ -16,7 +16,6 @@ namespace LMSAutoTesting.Pages
                 return driverWait.Until(ExpectedConditions.ElementExists(By.XPath("//a[@href='/groups']")));
             }
         }
-        public IWebElement ButtonStudentsList => _driver.FindElement(By.XPath(@"//a[@href='/students-list']"));
         public IWebElement ButtonSettings
         {
             get

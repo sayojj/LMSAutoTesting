@@ -6,13 +6,12 @@ namespace LMSAutoTesting.Pages
     public abstract class AbstractPage
     {
         protected WebDriver _driver;   
+        public abstract void Open();
 
         public AbstractPage()
         {
            _driver=DriverStorage.GetInstance().Driver;
         }
-
-        public abstract void Open();
 
         public virtual void PressButton(IWebElement button)
         {

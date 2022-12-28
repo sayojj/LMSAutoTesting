@@ -1,6 +1,4 @@
 using LMSAutoTesting.Pages;
-using System;
-using TechTalk.SpecFlow;
 
 namespace LMSAutoTesting.StepDefinitions
 {
@@ -33,7 +31,6 @@ namespace LMSAutoTesting.StepDefinitions
         {
             settingsPage.PressButton(settingsPage.ButtonSaveSettings);
         }
-
 
         [Then(@"Number changed")]
         public void ThenNumberChanged()

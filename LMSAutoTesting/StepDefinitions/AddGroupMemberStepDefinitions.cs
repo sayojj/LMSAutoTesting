@@ -56,7 +56,6 @@ namespace LMSAutoTesting.StepDefinitions
             _courseId = client.GetIdCreatedCourse(_adminToken, tab);
         }
 
-
         [Given(@"Create group as  admin")]
         public void GivenCreateGroupAsAdmin(Table table)
         {
@@ -83,7 +82,6 @@ namespace LMSAutoTesting.StepDefinitions
         {
             authPage.PressButton(authPage.ButtonLogin);
         }
-
 
         [Given(@"Click groups on HomePage")]
         public void GivenClickGroupsOnHomePage()

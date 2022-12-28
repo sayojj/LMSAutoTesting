@@ -8,14 +8,6 @@ namespace LMSAutoTesting.Pages
     public class RegistrationPage : AbstractPage
     {
         public IWebElement ButtonLoginInMenu => _driver.FindElement(By.XPath("//a[text()='Вход']"));
-        public IWebElement Name
-        {
-            get
-            {
-                WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
-                return driverWait.Until(ExpectedConditions.ElementExists(By.XPath("//input[@name='firstName']")));
-            }
-        }
         public IWebElement Surname => _driver.FindElement(By.XPath(@"//input[@class='form-input']"));
         public IWebElement CheckBox => _driver.FindElement(By.XPath(@"//span[@class='custom-checkbox-text']"));
         public IWebElement BirthDate => _driver.FindElement(By.XPath(@"//input[@class='form-control']"));
@@ -25,6 +17,15 @@ namespace LMSAutoTesting.Pages
         public IWebElement RepeatPassword => _driver.FindElement(By.XPath(@"//input[@name='confirmPassword']"));
         public IWebElement Phone => _driver.FindElement(By.XPath(@"//input[@name='phoneNumber']"));
         public IWebElement ClickRegistrate => _driver.FindElement(By.XPath(@"//button[@class='sc-bczRLJ iJvUkY btn btn-fill flex-container']"));
+
+        public IWebElement Name
+        {
+            get
+            {
+                WebDriverWait driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                return driverWait.Until(ExpectedConditions.ElementExists(By.XPath("//input[@name='firstName']")));
+            }
+        }
         
         public override void Open()
         {
